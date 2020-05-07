@@ -50,6 +50,7 @@ monogatari.assets ('videos', {
 
 // Define the images used in the game.
 monogatari.assets ('images', {
+	"panneau": "panneau.jpg",
 	"1": "1.jpg",
 	"2": "2.jpg",
 	"3": "3.jpg",
@@ -72,6 +73,7 @@ monogatari.assets ('scenes', {
 	"discord1": "discord1.jpg",
 	"discord2": "discord2.jpg",
 	"discord2": "discord3.jpg",
+	"mur": "mur.svg",
 	"erreur": "erreur.jpg"
 });
 
@@ -340,7 +342,9 @@ monogatari.script ({
 		"Vous ouvrez la porte. Enfin, la vie liiiibreee !!!!",
 		"show scene white with fadeIn",
 		"...",
-		"Mais vous êtes en face d'une autre porte",
+		"show image panneau",
+		"show scene mur",
+		"Mais vous êtes en face d'un... mur ??!",
 		"Vous lisez l'écriteau",
 		"«Coronavirus : plus que jamais, pour sauver des vies, restez chez vous.»",
 		"Mais pas d'inquiétude, tout n'est pas perdu.",
