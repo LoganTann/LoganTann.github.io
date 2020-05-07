@@ -50,12 +50,29 @@ monogatari.assets ('videos', {
 
 // Define the images used in the game.
 monogatari.assets ('images', {
-
+	"1": "1.jpg",
+	"2": "2.jpg",
+	"3": "3.jpg",
+	"4": "4.jpg"
 });
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
-
+	"fond-1": "fond-1.svg",
+	"fond-2": "fond-2.svg",
+	"fond-3": "fond-3.svg",
+	"fond-4": "fond-4.svg",
+	"fond-5": "fond-5.svg",
+	"fond-6": "fond-6.svg",
+	"fond-7": "fond-7.svg",
+	"cnewsBlur": "cnewsBlur.jpg",
+	"cnewsFinal": "cnews.jpg",
+	"lolotchat" : "tchatWithLolo.jpg",
+	"mort": "mort.jpg",
+	"discord1": "discord1.jpg",
+	"discord2": "discord2.jpg",
+	"discord2": "discord3.jpg",
+	"erreur": "erreur.jpg"
 });
 
 
@@ -74,7 +91,7 @@ monogatari.characters ({
 monogatari.script ({
 	// The game starts here.
 	'Start': [
-		'show scene #black with fadeIn',
+		'show scene fond-1 with fadeIn',
 		'centered ...',
 		'centered ... ?',
 		'centered Il fait noir',
@@ -107,17 +124,23 @@ monogatari.script ({
 		'y Inspectons les lieux... je trouverai sans doute quelques indices.',
 		'y Commençons par tatonner les bords',
 		'Vous arrivez à discerner les bords de la pièce',
+		'show scene fond-2 with fadeIn',
 		'Vous pouvez identifier un ordinateur...',
 		'y Impossible de trouver le bouton pour l\'allumer, il fait trop noir',
+		'show scene fond-3 with fadeIn',
 		'Vous trouvez également une télévision et en la touchant ...',
+		'show scene fond-4 with fadeIn',
 		'*clic*<br> *bzzzzzz*',
 		'y Ah, je crois que j\'ai réussi à l\'allumer !!',
 		"La télévision démarre, elle semble vielle... et ne pas avoir de télécommande pour changer de chaine.",
 		"y Ah, ça arrive ! Peut être que j'aurai des nouvelles de l'extérieur ?",
+		'show scene cnewsBlur with fadeIn',
 		"La télévision a fini de démarrer, il est maintenant possible de voir le contenu",
+		'show scene cnewsFinal with fadeIn',
 		"y Qu'est-ce que ???",
 		"Vous découvrez avec horreur le contenu, et décidez de ne pas aller plus loin",
 		"y N'empêche, il y a un peu plus de lumière maintenant !",
+		'show scene fond-5 with fadeIn',
 		"Vous décidez alors d'allumer l'ordinateur.",
 		"Ce sont ceux du lycée",
 		"Sachant cela, vous décidez d'inspecter encore avec le peu de lumière, vu le temps de démarrage...",
@@ -130,6 +153,7 @@ monogatari.script ({
 		"y Hmm.",
 		"Étant prof, vous vous doutez que ce sont vos élèves qui ont fait le coup, et qu'ils n'ont évidemment pas été tout seuls pour préparer ça ",
 		"y Le prix ne serait pas un chantage pour pouvoir avoir de meilleures notes ?",
+		'show scene fond-6 with fadeIn',
 		"Vous vous détournez et allez vers le PC, qui venait juste à l'instant de s'allumer.",
 		"y Voyons... Oh, un mot de passe...",
 		"Il s'agissait d'un PC du lycée... modifié ? Seul un seul mot de passe est demandé, pas d'identifiant.",
@@ -149,6 +173,7 @@ monogatari.script ({
 	"gotPasswdOk": [
 		"y Super !! j'ai trouvé le bon mot de passe !!",
 		"Le PC démarra sans soucis. Une fenêtre s'ouvrit automatiquement",
+		'show scene lolotchat with fadeIn',
 		"y C'est une fenêtre de t'chat... Avec qui je suis ?",
 		"Vous voyez le nom : Lolo",
 		"Et la caméra est tout juste apparue : vous voyez une bête feuille A4 avec un laurier dessus.",
@@ -164,31 +189,40 @@ monogatari.script ({
 		"lo Il suffit juste de résoudre les différentes énigmes que je te propose.",
 		"y Par quoi commencer ?",
 		"lo Il y a dans le PC plusieurs images.",
+		"show scene mort with zoomIn",
 		"vous remarquez la présence d'un dossier et vous l'ouvrez.",
 		"y Oui ?",
 		"lo Observe-les et envoie moi une image qui justifie l'extinction des dinausores.",
+		"show image 1",
 		"*Voici l'image de la terre plate et la météorite*",
+		"hide image 1",
+		"show image 2",
 		"*Voici l'image de la terre ronde et la météorite*",
+		"hide image 2",
+		"show image 3",
 		"*Voici l'image de la terre ronde et le Coronavirus*",
+		"hide image 3",
+		"show image 4",
 		"*Voici l'image de la terre plate et le Coronavirus*",
+		"hide image 4",
 		"lo Choisis celle qui te plaît le plus, mais attention, elle doit aussi me plaire !",
 		{
 			'Choice': {
 				'Dialog': 'Choisis une image qui pourrait plaire à vous et à Lolo',
 				'1': {
-					'Text': 'Photo 2 : La terre plate et la météorite',
+					'Text': 'Photo 1 : La terre plate et la météorite',
 					'Do': 'jump Yes'
 				},
 				'2': {
-					'Text': 'Photo 2 : La terre plate et la météorite',
+					'Text': 'Photo 1 : La terre plate et la météorite',
 					'Do': 'jump Yes'
 				},
 				'3': {
-					'Text': 'Photo 2 : La terre plate et la météorite',
+					'Text': 'Photo 1 : La terre plate et la météorite',
 					'Do': 'jump Yes'
 				},
 				'4': {
-					'Text': 'Photo 2 : La terre plate et la météorite',
+					'Text': 'Photo 1 : La terre plate et la météorite',
 					'Do': 'jump Yes'
 				}
 			}
@@ -196,6 +230,7 @@ monogatari.script ({
 	],
 
 	'Yes': [
+		'show scene lolotchat with fadeIn',
 		'Vous avez été contraint par une force mystérieuse de choisir la photo 2.',
 		'lo GAGNÉÉÉÉ !!',
 		'y Ouaiiiis !!',
@@ -212,7 +247,7 @@ monogatari.script ({
 		"lo Mais attention : votre connection est limitée. Il n'y a qu'un seul site qui est accessible. Trouvez celui le plus propice pour contacter le genre de personne qui pourrait vous aider",
 		"*lo s'est déconnecté*",
 		"Vous êtes de nouveau seule",
-		"y «Trouvez celui le plus propice pour contacter le genre de personne qui pourrait vous aider», hein ?"
+		"y «Trouvez celui le plus propice pour contacter le genre de personne qui pourrait vous aider», hein ?",
 		"Donc, mes élèves? Ce qui veut dire qu'il faut se connecter à : ",
 		{
 			'Input': {
@@ -225,6 +260,7 @@ monogatari.script ({
 			}
 		},
 		"y Ça semble fonctionner !",
+		'show scene erreur with fadeIn',
 		"Vous entrez donc vos identifiants et une boite «Êtes vous un robot» assez particulière s'affiche...",
 		"Il est demandé : «Cliquez sur l'erreur»",
 		{
@@ -240,6 +276,7 @@ monogatari.script ({
 				}
 			}
 		},
+		'show scene discord2 with fadeIn',
 		"En tout cas, cela a fonctionné !",
 		"Vous décidez donc d'envoyer un message d'aide aux ts3",
 		'...',
@@ -247,6 +284,7 @@ monogatari.script ({
 		"Vous remarquez avec horreur que vous avez envoyé votre message sur le salon #maths",
 		"Vous remarquez également que vous n'avez même pas envoyé dans la bonne classe",
 		"y Mince, la fatigue...",
+		'show scene discord1 with fadeIn',
 		"En cliquant sur le serveur de la <b>bonne</b> classe, l'accès est bloqué.",
 		"Un seul message est affiché : le votre.",
 		"Peut être veut-on vous faire deviner votre propre devinette ?",
@@ -278,9 +316,11 @@ monogatari.script ({
 			}
 		},
 		"Vous décidez de dormir.",
+		'show scene black with fadeIn',
 		"...",
 		" ",
 		"...",
+		'show scene discord2 with fadeIn',
 		"Vous vous réveillez une heure plus tard par le son d'une notification, et vous lisez la conversation : ",
 		"<em>Edwing#2374 (16:37) :</em> Je pars vous aider !",
 		"<em>Nass#6784 (17:03) :</em> Madame, il y a un petit problème...",
@@ -288,6 +328,7 @@ monogatari.script ({
 		"<em>Nass#6784 (17:05) :</em> Je pars à votre rescousse !",
 		"y Oh...",
 		"<span style='background-color: orange;'>Nass#6784 (17:20) : @{{player.name}} C'est bon !! C'est ok</span>",
+		'show scene fond-7 with fadeIn',
 		"La lumière fit alors son apparition. Vous vous empressez de donner des nouvelles et remerciez ceux qui vous ont aidé !!",
 		"Une fois la vue rétablie, vous voyez alors apparaitre un autre message, invisible s'il n'y avais pas eu de lumière...",
 		"Vous lisez le message...",
@@ -297,6 +338,7 @@ monogatari.script ({
 		"Vous ouvrez le carton.",
 		"show message pack",
 		"Vous ouvrez la porte. Enfin, la vie liiiibreee !!!!",
+		"show scene white with fadeIn",
 		"...",
 		"Mais vous êtes en face d'une autre porte",
 		"Vous lisez l'écriteau",
