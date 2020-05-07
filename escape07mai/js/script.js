@@ -5,7 +5,7 @@ monogatari.action ('message').messages ({
 	'pack': {
 		title: 'Voir le contenu du paquet',
 		subtitle: 'Voir le contenu du paquet',
-		body: `<a href='cadeau/' taget="_blank">Ouvrir le paquet dans un nouvel onglet</a>`
+		body: `<a href='cadeau/' target="_blank">Ouvrir le paquet dans un nouvel onglet</a>`
 	}
 });
 
@@ -124,10 +124,10 @@ monogatari.script ({
 		"Il semblerait qu'il n'y ait rien d'autre dans cette pièce, mis à part la table et la chaise.",
 		"y Ah, et une porte en plus !",
 		"*clac* *clac*",
-		"y fermée...",
+		"y Fermée...",
 		"Vous remarquez des mots dessus : ",
 		"«Si vous parvenez à trouver la boite, vous pourrez m'ouvrir, et en plus remporter quelques prix.»",
-		"y hmm.",
+		"y Hmm.",
 		"Étant prof, vous vous doutez que ce sont vos élèves qui ont fait le coup, et qu'ils n'ont évidemment pas été tout seuls pour préparer ça ",
 		"y Le prix ne serait pas un chantage pour pouvoir avoir de meilleures notes ?",
 		"Vous vous détournez et allez vers le PC, qui venait juste à l'instant de s'allumer.",
@@ -138,7 +138,6 @@ monogatari.script ({
 			'Input': {
 				'Text': 'Mot de passe',
 				'Validation': function (input) {
-					console.log("TEST");
 					const decodedinput = input.toLowerCase();
 					return decodedinput.includes("c") && decodedinput.includes("new");
 				},
@@ -158,20 +157,20 @@ monogatari.script ({
 		"La voix de lolo semblait être modifiée.",
 		"y Euh, bonjour ?",
 		"lo Il semble que vous soyez enfermé ?",
-		"y OUI EN EFFET.",
-		"lo T'inquiète, c'est moi. Je suis là pour t'aider à sortir.",
+		"y sans blague...",
+		"lo T'inquiète. Je suis là pour t'aider à sortir. Je suis un petit laurier tout mignon gentil !",
 		"«Aider à sortir» mais c'est sans doute lui qui a organisé l'enlèvement !",
 		"y Ah ? Comment ?",
 		"lo Il suffit juste de résoudre les différentes énigmes que je te propose.",
-		"y Par quoi commencer.",
+		"y Par quoi commencer ?",
 		"lo Il y a dans le PC plusieurs images.",
 		"vous remarquez la présence d'un dossier et vous l'ouvrez.",
-		"y oui ?",
+		"y Oui ?",
 		"lo Observe-les et envoie moi une image qui justifie l'extinction des dinausores.",
-		"Voici l'image de la terre plate et la météorite",
-		"Voici l'image de la terre ronde et la météorite",
-		"Voici l'image de la terre ronde et le Coronavirus",
-		"Voici l'image de la terre plate et le Coronavirus",
+		"*Voici l'image de la terre plate et la météorite*",
+		"*Voici l'image de la terre ronde et la météorite*",
+		"*Voici l'image de la terre ronde et le Coronavirus*",
+		"*Voici l'image de la terre plate et le Coronavirus*",
 		"lo Choisis celle qui te plaît le plus, mais attention, elle doit aussi me plaire !",
 		{
 			'Choice': {
@@ -199,14 +198,13 @@ monogatari.script ({
 	'Yes': [
 		'Vous avez été contraint par une force mystérieuse de choisir la photo 2.',
 		'lo GAGNÉÉÉÉ !!',
-		'Mais bon, comme vous avez gagné, c\'est le principal ! Vous essayez alors de forcer l\'apparence de satisfaction',
-		'y ouaiiiis !!',
-		"y que faut-il faire maintenant ?",
+		'y Ouaiiiis !!',
+		"y Que faut-il faire maintenant ?",
 		"lo Vous ne pourrez pas trouver la boite sans une action spéciale. Écoutez bien : ",
 		"lo Il faut vous rendre au barrage <b>hydoalcoolique</b>--...",
 		"lo Enfin, je veux dire, hydrolique, vous voyez, celui du coté de la Seine ?",
 		"y ...",
-		"lo et ensuite, à l'aire de jeu le plus proche de celui-ci, récupérer dans un arbre le téléphone suspendu à une branche haute.",
+		"lo Et ensuite, à l'aire de jeu le plus proche de celui-ci, récupérer dans un arbre le téléphone suspendu à une branche haute.",
 		"lo Une fois allumé, un site sera affiché et il suffira juste d'appuyer sur le bouton pour continuer l'aventure !",
 		"y Et donc, comment je fais pour me rendre dehors ?",
 		"lo Il suffit juste de demander gentillement à quelqu'un. Vous avez internet, non ?",
@@ -214,6 +212,7 @@ monogatari.script ({
 		"lo Mais attention : votre connection est limitée. Il n'y a qu'un seul site qui est accessible. Trouvez celui le plus propice pour contacter le genre de personne qui pourrait vous aider",
 		"*lo s'est déconnecté*",
 		"Vous êtes de nouveau seule",
+		"y «Trouvez celui le plus propice pour contacter le genre de personne qui pourrait vous aider», hein ?"
 		"Donc, mes élèves? Ce qui veut dire qu'il faut se connecter à : ",
 		{
 			'Input': {
@@ -230,7 +229,7 @@ monogatari.script ({
 		"Il est demandé : «Cliquez sur l'erreur»",
 		{
 			'Choice': {
-				'Dialog': 'Choisis une image qui pourrait plaire à vous et à Lolo',
+				'Dialog': 'Choisir une image qui prouverait que vous n\'êtes pas un robot	',
 				'1': {
 					'Text': 'cliquer sur le d apostrophe',
 					'Do': 'y Je en suis pas cruelle à ce point'
@@ -241,7 +240,7 @@ monogatari.script ({
 				}
 			}
 		},
-		"Cela a fonctionné !",
+		"En tout cas, cela a fonctionné !",
 		"Vous décidez donc d'envoyer un message d'aide aux ts3",
 		'...',
 		"Vous voyez votre message se supprimer ?!",
@@ -283,12 +282,12 @@ monogatari.script ({
 		" ",
 		"...",
 		"Vous vous réveillez une heure plus tard par le son d'une notification, et vous lisez la conversation : ",
-		"Edwing#2374 (16:37) : Je pars vous aider !",
-		"Nass#6784 (17:03) : Madame, il y a un petit problème...",
-		"Nass#6784 (17:03) : Edwing s'est fait «hagar» par les plantes !!",
-		"Nass#6784 (17:05) : Je pars à votre rescousse !",
-		"y oh...",
-		"<span style='background-color: orange;'>Nass#6784 (17:20) : @{player.name} C'est bon !! C'est ok</span>",
+		"<em>Edwing#2374 (16:37) :</em> Je pars vous aider !",
+		"<em>Nass#6784 (17:03) :</em> Madame, il y a un petit problème...",
+		"<em>Nass#6784 (17:03) :</em> Edwing s'est fait «hagar» par les plantes !!",
+		"<em>Nass#6784 (17:05) :</em> Je pars à votre rescousse !",
+		"y Oh...",
+		"<span style='background-color: orange;'>Nass#6784 (17:20) : @{{player.name}} C'est bon !! C'est ok</span>",
 		"La lumière fit alors son apparition. Vous vous empressez de donner des nouvelles et remerciez ceux qui vous ont aidé !!",
 		"Une fois la vue rétablie, vous voyez alors apparaitre un autre message, invisible s'il n'y avais pas eu de lumière...",
 		"Vous lisez le message...",
