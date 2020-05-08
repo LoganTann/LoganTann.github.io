@@ -3,9 +3,9 @@
 // Define the messages used in the game.
 monogatari.action ('message').messages ({
 	'pack': {
-		title: 'Voir le contenu du paquet',
-		subtitle: 'Voir le contenu du paquet',
-		body: `<a href='cadeau/' target="_blank">Ouvrir le paquet dans un nouvel onglet</a>`
+		title: 'Contenu du paquet',
+		body: `<img src="https://cdn.discordapp.com/attachments/690175936406093892/707990731981324329/Snapchat-1973588518.jpg"></img><br>
+		<img src="https://cdn.discordapp.com/attachments/688337444696752160/707911067132493844/JPEG_20200507_130502.jpg"></img>`
 	}
 });
 
@@ -72,7 +72,7 @@ monogatari.assets ('scenes', {
 	"mort": "mort.jpg",
 	"discord1": "discord1.jpg",
 	"discord2": "discord2.jpg",
-	"discord2": "discord3.jpg",
+	"discord3": "discord3.jpg",
 	"mur": "mur.svg",
 	"erreur": "erreur.jpg"
 });
@@ -195,18 +195,18 @@ monogatari.script ({
 		"vous remarquez la présence d'un dossier et vous l'ouvrez.",
 		"y Oui ?",
 		"lo Observe-les et envoie moi une image qui justifie l'extinction des dinausores.",
-		"show image 1",
+		"show image 1 center with zoomIn",
 		"*Voici l'image de la terre plate et la météorite*",
-		"hide image 1",
-		"show image 2",
+		"hide image 1 center with zoomOut",
+		"show image 2 center with zoomIn",
 		"*Voici l'image de la terre ronde et la météorite*",
-		"hide image 2",
-		"show image 3",
+		"hide image 2 center with zoomOut",
+		"show image 3 center with zoomIn",
 		"*Voici l'image de la terre ronde et le Coronavirus*",
-		"hide image 3",
-		"show image 4",
+		"hide image 3 center with zoomOut",
+		"show image 4 center with zoomIn",
 		"*Voici l'image de la terre plate et le Coronavirus*",
-		"hide image 4",
+		"hide image 4 center with zoomOut",
 		"lo Choisis celle qui te plaît le plus, mais attention, elle doit aussi me plaire !",
 		{
 			'Choice': {
@@ -233,7 +233,7 @@ monogatari.script ({
 
 	'Yes': [
 		'show scene lolotchat with fadeIn',
-		'Vous avez été contraint par une force mystérieuse de choisir la photo 2.',
+		'Vous avez été contraint par une force mystérieuse de choisir la photo 1.<br> Dommage...',
 		'lo GAGNÉÉÉÉ !!',
 		'y Ouaiiiis !!',
 		"y Que faut-il faire maintenant ?",
@@ -314,7 +314,7 @@ monogatari.script ({
 					const decodedinput = input.toLowerCase();
 					return decodedinput.includes("dor");
 				},
-				'Warning': "Cela ne vous mênera à rien. Choisissez autre chose (c'est un verbe en rapport avec votre message  « bonne nuit dormez bien »)"
+				'Warning': "Cela ne vous mênera à rien. Choisissez autre chose de plus utile pour faire passer votre temps (c'est un verbe en rapport avec votre message  « bonne nuit dormez bien »)"
 			}
 		},
 		"Vous décidez de dormir.",
@@ -322,7 +322,7 @@ monogatari.script ({
 		"...",
 		" ",
 		"...",
-		'show scene discord2 with fadeIn',
+		'show scene discord3 with fadeIn',
 		"Vous vous réveillez une heure plus tard par le son d'une notification, et vous lisez la conversation : ",
 		"<em>Edwing#2374 (16:37) :</em> Je pars vous aider !",
 		"<em>Nass#6784 (17:03) :</em> Madame, il y a un petit problème...",
@@ -342,8 +342,9 @@ monogatari.script ({
 		"Vous ouvrez la porte. Enfin, la vie liiiibreee !!!!",
 		"show scene white with fadeIn",
 		"...",
-		"show image panneau",
-		"show scene mur",
+		"Votre vue se rétablit, et...",
+		"show scene mur with fadeIn",
+		"show image panneau center with fadeIn",
 		"Mais vous êtes en face d'un... mur ??!",
 		"Vous lisez l'écriteau",
 		"«Coronavirus : plus que jamais, pour sauver des vies, restez chez vous.»",
