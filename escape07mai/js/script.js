@@ -4,8 +4,8 @@
 monogatari.action ('message').messages ({
 	'pack': {
 		title: 'Contenu du paquet',
-		body: `<img src="./cadeau/1.jpg"></img><br>
-		<img src="./cadeau/2.jpg"></img>`
+		body: `<img src="./cadeau/1.jpg" style='display: block;position: relative;'></img><br>
+		<img src="./cadeau/2.jpg" style='display: block;position: relative;'></img>`
 	}
 });
 
