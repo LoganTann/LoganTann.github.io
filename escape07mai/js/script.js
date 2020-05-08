@@ -4,8 +4,8 @@
 monogatari.action ('message').messages ({
 	'pack': {
 		title: 'Contenu du paquet',
-		body: `<img src="https://cdn.discordapp.com/attachments/690175936406093892/707990731981324329/Snapchat-1973588518.jpg"></img><br>
-		<img src="https://cdn.discordapp.com/attachments/688337444696752160/707911067132493844/JPEG_20200507_130502.jpg"></img>`
+		body: `<img src="./cadeau/1.jpg"></img><br>
+		<img src="./cadeau/2.jpg"></img>`
 	}
 });
 
@@ -340,7 +340,7 @@ monogatari.script ({
 		"Vous ouvrez le carton.",
 		"show message pack",
 		"Vous ouvrez la porte. Enfin, la vie liiiibreee !!!!",
-		"show scene white with fadeIn",
+		"show scene #ffffff with fadeIn",
 		"...",
 		"Votre vue se rétablit, et...",
 		"show scene mur with fadeIn",
