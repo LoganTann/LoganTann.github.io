@@ -1,0 +1,89 @@
+
+      body {
+        font-family: Montserrat, sans-serif;
+      }
+      header {
+        display: flex;
+        height: 100vh;
+        background-size: cover;
+        background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5) ), url("headerBackground.jpg");
+        background-position: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-attachment: scroll, fixed;
+      }
+      header h2 {
+        text-align: center;
+      }
+      .FrederickaFont {
+        font-family: "Fredericka the Great", Montserrat, sans-serif;
+      }
+      header img {
+        max-width: 90%;
+      }
+      header div {
+        height: 40vh;
+      }
+      .AyanoParallax {
+        background: url("ltmNight.jpg");
+        position: relative;
+      }
+      .EneParallax {
+        background: url("street1.jpg");
+      }
+      .AyanoParallax, .EneParallax {
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+       .EneParallax>div {
+        display: flex;
+        justify-content: center;
+      }
+
+      .AyanoParallax>div>img {
+        top: 23vh;
+        left:10vw;
+      }
+
+      .EneParallax>div>img {
+        top: 20vh;
+      }
+      .charactersParallax {
+        position: relative;
+      }
+      .flow-text {
+        text-align: justify;
+      }
+      #downloadPart {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background: rgba(16,16,16,0.5);
+        width: 55vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1em;
+        font-size: 1.2em;
+        text-align: center;
+      }
+      #downloadPart a {
+        color: black;
+        background: #cc403f;
+        display: block;
+        padding: 1em;
+        margin-top: 1em;
+        font-weight: bold;
+        border: 2px solid white;
+      }
+      #downloadPart .advanced a {
+        color: #DDD;
+        background: #642c32;
+        font-size: 0.7em;
+      }
+    

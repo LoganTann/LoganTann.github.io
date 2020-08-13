@@ -15,117 +15,82 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <style media="screen">
-      body {
-        font-family: Montserrat, sans-serif;
-      }
-      header {
-        display: flex;
-        height: 100vh;
-        background-size: cover;
-        background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5) ), url("headerBackground.jpg");
-        background-position: center;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      header h2 {
-        font-family: "Fredericka the Great", Montserrat, sans-serif;
-        text-align: center;
-      }
-      header img {
-        max-width: 90%;
-      }
-      header div {
-        height: 40vh;
-      }
-      .AyanoParallax {
-        background: url("ltmNight.jpg");
-      }
-      .EneParallax {
-        background: url("street1.jpg");
-      }
-      .AyanoParallax, .EneParallax {
-        background-attachment: fixed;
-        background-size: cover;
-      }
-
-      .AyanoParallax>div, .EneParallax>div {
-        display: flex;
-        justify-content: center;
-      }
-
-      .AyanoParallax>div>img {
-        top: 30vh;
-      }
-      .EneParallax>div>img {
-        top: 20vh;
-      }
-      .charactersParallax {
-        position: relative;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="black white-text">
     <header>
       <img src="logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
       <div></div>
-      <h2 class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">A Kagerou Project Fangame</h2>
+      <h2 class="animate__animated animate__fadeInUp FrederickaFont" style="animation-delay: 500ms;">A Kagerou Project Fangame</h2>
 
     </header>
-    <section class="container">
-      <h3>A long time ago ...</h3>
+    <section class="container flow-text">
+      <p class="FrederickaFont">A long time ago ...</p>
       <p>An isolated monster spawned in a dark place on August 15th. This monster knew nothing, and tried to learn about herself and about humans.<br>
         Eventually, she left this sinister world.<b>Was trying to understand humans a good idea, in the end?</b></p>
+      <hr>
+      <p class="FrederickaFont">Shintaro Kisaragi,</p>
 
-
-
-      <h3>Shintaro Kisaragi, an 18-year-old boy, became a neet two years ago following the strange disappearance of his only three friends.</h3>
-
-      <p>On a hot August day, he is forced to go outside but gets unlucky, as he is taken hostage by a group of terrorists. <br>
+      <p>an 18-year-old boy, became a neet two years ago following <em>the strange disappearance of his only three friends</em>.. On a hot August day, he is forced to go outside but gets unlucky, as he is taken hostage by a group of terrorists. <br>
       After being miraculously saved, he joins a group of teenagers named the Mekakushi Dan. The group members all miraculously escaped a deadly accident in the past, and have a power they call their "Eye Ability".</p>
 
       <p>Over time, Shintaro begins to recover his old memories, not knowing he's going to unveil a tragedy directly linked to his past.</p>
-
-      <p>Retaining's memories is a non-profit fan made game based on the many routes and media of the Kagerou project.<br>
-      The Kagerou Project, also known as "Kagerou Daze" is a Japanese mixed-media project created by Jin (Shizen no Teki-P), started as a Vocaloid song series.</p>
     </section>
 
     <div class="AyanoParallax">
+      <section class="container" id="downloadPart">
+        <div class="">
+          <h2>Try the game</h2>
+          <p>Based on the many timelines of Jin's (aka. Shizen No Teki-P) mixed-media "Kagerou project", Retaining's memories is a non-profit fan made work that mixes a visual novel gameplay and mini-games. <p>
+        </div>
+        <div class="row valign-wrapper">
+          <div class="col s12 m7">
+            <p>Latest demo (2.99.0)</p>
+            <ul>
+              <li><a href="#!">Download the windows build</a></li>
+              <li><a href="#!">Play online on Kagescan *</a></li>
+              <li><a href="#!">Download the source code</a></li>
+            </ul>
+          </div>
+          <div class="col s12 m5 advanced">
+            <p>Advanced</p>
+            <ul>
+              <li><a href="#!">Play the demo without assets preloading*</a></li>
+              <li><a href="#!">Play the nighly version online on Github*</a></li>
+              <li><a href="#!">Download the nighly version source code</a></li>
+            </ul>
+          </div>
+        </div>
+        <p>* : We do not recommand playing the online version.</p>
+      </section>
       <img class="charactersParallax" src="Load_Ayano.png" alt="image">
     </div>
-    <section class="container">
-      <p>Latest demo : version 2.99.00</p>
-      <ul>
-        <li>Download the windows build (recommanded)</li>
-        <li>Play online</li>
-        <li>Download the source code</li>
-      </ul>
 
-      <p>Advanced</p>
-      <ul>
-        <li>Play the demo without assets preloading</li>
-        <li>Play the nighly build</li>
-        <li>Download the nighly build</li>
-      </ul>
+    <section class="container flow-text">
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
-
     <div class="EneParallax">
-         <img class="charactersParallax" src="Load_Ene.png" alt="image">
-     </div>
-    <section class="container">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <img class="charactersParallax" src="Load_Ene.png" alt="image">
+    </div>
+    <section class="container flow-text">
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="row valign-wrapper">
+        <img class="col s3"alt="KageScan - Logo" src="https://kagescan.legtux.org/res/img/logo.svg">
+        <div class="col s9">
+          Project maintained and directed by Kagescan's Instagram Team (ShinProg - Eolienne)
+        </div>
+      </div>
     </section>
 
     <script type="text/javascript">
 
       //var images = document.querySelectorAll('.charactersParallax');
       new simpleParallax(document.querySelector('.AyanoParallax>img'), {
-        orientation: "down right"
+        orientation: "down"
       });
 
       new simpleParallax(document.querySelector('.EneParallax>img'), {
-        orientation: "up left"
+        orientation: "up right"
       });
     </script>
   </body>
