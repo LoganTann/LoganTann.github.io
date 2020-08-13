@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Retaining's memories - A Kagerou Project Fangame</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style media="screen">
+      body {
+        font-family: Montserrat, sans-serif;
+      }
+      header {
+        display: flex;
+        height: 100vh;
+        background-size: cover;
+        background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5) ), url("headerBackground.jpg");
+        background-position: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      header h2 {
+        font-family: "Fredericka the Great", Montserrat, sans-serif;
+        text-align: center;
+      }
+      header img {
+        max-width: 90%;
+      }
+      header div {
+        height: 40vh;
+      }
+      .AyanoParallax {
+        background: url("ltmNight.jpg");
+      }
+      .EneParallax {
+        background: url("street1.jpg");
+      }
+      .AyanoParallax, .EneParallax {
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .AyanoParallax>div, .EneParallax>div {
+        display: flex;
+        justify-content: center;
+      }
+
+      .AyanoParallax>div>img {
+        top: 30vh;
+      }
+      .EneParallax>div>img {
+        top: 20vh;
+      }
+      .charactersParallax {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body class="black white-text">
+    <header>
+      <img src="logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
+      <div></div>
+      <h2 class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">A Kagerou Project Fangame</h2>
+
+    </header>
+    <section class="container">
+      <h3>A long time ago ...</h3>
+      <p>An isolated monster spawned in a dark place on August 15th. This monster knew nothing, and tried to learn about herself and about humans.<br>
+        Eventually, she left this sinister world.<b>Was trying to understand humans a good idea, in the end?</b></p>
+
+
+
+      <h3>Shintaro Kisaragi, an 18-year-old boy, became a neet two years ago following the strange disappearance of his only three friends.</h3>
+
+      <p>On a hot August day, he is forced to go outside but gets unlucky, as he is taken hostage by a group of terrorists. <br>
+      After being miraculously saved, he joins a group of teenagers named the Mekakushi Dan. The group members all miraculously escaped a deadly accident in the past, and have a power they call their "Eye Ability".</p>
+
+      <p>Over time, Shintaro begins to recover his old memories, not knowing he's going to unveil a tragedy directly linked to his past.</p>
+
+      <p>Retaining's memories is a non-profit fan made game based on the many routes and media of the Kagerou project.<br>
+      The Kagerou Project, also known as "Kagerou Daze" is a Japanese mixed-media project created by Jin (Shizen no Teki-P), started as a Vocaloid song series.</p>
+    </section>
+
+    <div class="AyanoParallax">
+      <img class="charactersParallax" src="Load_Ayano.png" alt="image">
+    </div>
+    <section class="container">
+      <p>Latest demo : version 2.99.00</p>
+      <ul>
+        <li>Download the windows build (recommanded)</li>
+        <li>Play online</li>
+        <li>Download the source code</li>
+      </ul>
+
+      <p>Advanced</p>
+      <ul>
+        <li>Play the demo without assets preloading</li>
+        <li>Play the nighly build</li>
+        <li>Download the nighly build</li>
+      </ul>
+    </section>
+
+    <div class="EneParallax">
+         <img class="charactersParallax" src="Load_Ene.png" alt="image">
+     </div>
+    <section class="container">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </section>
+
+    <script type="text/javascript">
+
+      //var images = document.querySelectorAll('.charactersParallax');
+      new simpleParallax(document.querySelector('.AyanoParallax>img'), {
+        orientation: "down right"
+      });
+
+      new simpleParallax(document.querySelector('.EneParallax>img'), {
+        orientation: "up left"
+      });
+    </script>
+  </body>
+</html>
