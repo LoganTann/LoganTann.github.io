@@ -16,13 +16,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link rel="stylesheet" href="../style.css">
+    <script async src="../script.js" charset="utf-8"></script>
   </head>
   <body class="black white-text">
+
+    <div id="languagePicker">
+      <!-- Dropdown Trigger -->
+      <a class='dropdown-trigger btn white black-text' href='#!' data-target='dropdown1'>
+        <span id="worldIcon"></span>
+        Language : English</a>
+
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="../en/" class="black-text">English</a></li>
+        <li><a href="../fr/">Français</a></li>
+        <li><a href="../es/">Español</a></li>
+      </ul>
+    </div>
     <header>
       <img src="../logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
       <div></div>
       <h2 class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">A Kagerou Project Fangame</h2>
-
     </header>
     <section class="container flow-text">
       <h2>A long time ago ...</h2>
@@ -47,18 +61,18 @@
           <div class="col s12 m7">
             <p>Latest demo (2.99.0)</p>
             <ul>
-              <li><a href="#!">Download the windows build</a></li>
-              <li><a href="#!">Play online on Kagescan *</a></li>
-              <li><a href="#!">Download the source code</a></li>
+              <li><a href="../download/">Download the windows build</a></li>
+              <li><a href="../play/">Play online on Kagescan *</a></li>
+              <li><a href="../download/">Download the source code</a></li>
             </ul>
           </div>
           <div class="col s12 m5 advanced hide-on-small-only">
             <!-- Mobile users don't need that I think -->
             <p>Advanced</p>
             <ul>
-              <li><a href="#!">Play the demo without assets preloading*</a></li>
-              <li><a href="#!">Play the nighly version online on Github*</a></li>
-              <li><a href="#!">Download the nighly version source code</a></li>
+              <li><a href="../download/?nopreload">Play the demo without assets preloading*</a></li>
+              <li><a href="https://logantann.github.io/kagepro2/">Play the nighly version online on Github*</a></li>
+              <li><a href="https://github.com/LoganTann/kagepro2/archive/master.zip">Download the nighly version source code</a></li>
             </ul>
           </div>
         </div>
@@ -68,7 +82,7 @@
     </div>
 
     <section class="container" id="notesFromAuthors">
-      <h2>Recommandations</h2>
+      <h2>Advices</h2>
       <p>This game has been created to offer a global vision of the Kagerou Project franchise, and to express our fan side and our skills.<br>
       This game do not intent to replace the original serie, nor to steal the official content and publish it on the web.<br>
       Due to a small team, we couldn't made the assets by ourselves. This game have official and fan arts that do not belongs to us.</p>
@@ -134,23 +148,11 @@
 
       <hr>
       <div class="row valign-wrapper">
-        <a class="col s3" href="https://kagescan.legtux.org/"><img id="kagescanLogo" alt="KageScan - Logo" src="https://kagescan.legtux.org/res/img/logo.svg"></a>
-        <div class="col s9">
+        <a class="col s5 m3" href="https://kagescan.legtux.org/"><img id="kagescanLogo" alt="KageScan - Logo" src="https://kagescan.legtux.org/res/img/logo.svg"></a>
+        <div class="col s7 m9 flow-text">
           Project maintained and directed by Kagescan's <a href="https://www.instagram.com/kagerouproject_fr">Instagram</a> Team (ShinProg - Eolienne)
         </div>
       </div>
     </section>
-
-    <script type="text/javascript">
-
-      //var images = document.querySelectorAll('.charactersParallax');
-      new simpleParallax(document.querySelector('.AyanoParallax>img'), {
-        orientation: "down left"
-      });
-
-      new simpleParallax(document.querySelector('.EneParallax>img'), {
-        orientation: "up right"
-      });
-    </script>
   </body>
 </html>
