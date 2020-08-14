@@ -43,7 +43,7 @@
       }
 
       .AyanoParallax>div>img {
-        top: 40vh;
+        top: 20vh;
         left:10vw;
       }
 
@@ -101,3 +101,9 @@
         background: #642c32;
         font-size: 0.7em;
       }
+#notesFromAuthors {
+  font-size: 1.2em;
+}
+#notesFromAuthors b{
+  color: #EF5350;
+}

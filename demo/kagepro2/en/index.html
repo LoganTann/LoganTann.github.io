@@ -15,11 +15,11 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
   </head>
   <body class="black white-text">
     <header>
-      <img src="logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
+      <img src="../logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
       <div></div>
       <h2 class="animate__animated animate__fadeInUp FrederickaFont" style="animation-delay: 500ms;">A Kagerou Project Fangame</h2>
 
@@ -64,15 +64,34 @@
         </div>
         <p>* : We do not recommand playing the online version.</p>
       </section>
-      <img class="charactersParallax" src="Load_Ayano.png" alt="image">
+      <img class="charactersParallax" src="../Load_Ayano.png" alt="image">
     </div>
 
-    <section class="container flow-text">
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <section class="container" id="notesFromAuthors">
+      <p>This game has been created to offer a global vision of the Kagerou Project franchise, and to express our fan side and our skills.<br>
+      This game do not intent to replace the original serie, nor to steal the official content and publish it on the web.<br>
+      Due to a small team, we couldn't made the assets by ourselves. This game have official and fan arts that do not belongs to us.</p>
+      <p>This game contains the global story, so it contains major spoils of the whole franchise.</p>
+      <h3>Recommandations</h3>
+
+
+      <p class="flow-text">Age and safety</p>
+      <blockquote>
+        <p><b>12+ rated</b> (equivalent to PEGI 12 ou ESRB Teen)</p>
+        <p>This game is not suitable for epileptics. This game might connect to internet but don't have multiplayer features at the moment.</p>
+        <p><b>Does not contains :</b> surprise and horror scene; sexual scenes; realistic casino games; drugs; discrimination and in-app store</p>
+        <p><b>Does contains : moderate amounts of violence including blood, suicide, gore; in a drawn and non-realist world; slurs.</b> </p>
+      </blockquote>
+      <p>We recommand you to play the offline PC version of this game, made for the best gameplay.</p>
+      <p>If you are using the online version or running the source code "out of the box", please use an updated and popular browser (firefox ou chrome/chromium) !<br>
+        Indeed, this game use experimental/recent features of the web programming.</p>
+      <p>We recommand you to learn gameplay controls by clicking the button "help" in the menu.</p>
     </section>
+
     <div class="EneParallax">
-      <img class="charactersParallax" src="Load_Ene.png" alt="image">
+      <img class="charactersParallax" src="../Load_Ene.png" alt="image">
     </div>
+
     <section class="container flow-text">
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <div class="row valign-wrapper">
@@ -87,8 +106,7 @@
 
       //var images = document.querySelectorAll('.charactersParallax');
       new simpleParallax(document.querySelector('.AyanoParallax>img'), {
-        orientation: "down left",
-        scale: 1.5
+        orientation: "down left"
       });
 
       new simpleParallax(document.querySelector('.EneParallax>img'), {
