@@ -16,8 +16,11 @@
       header h2 {
         text-align: center;
       }
-      .FrederickaFont {
+      .FrederickaFont, h2 {
         font-family: "Fredericka the Great", Montserrat, sans-serif;
+      }
+      .OswaldFont {
+        font-family: Oswald, Montserrat, sans-serif;
       }
       header img {
         max-width: 90%;
@@ -106,4 +109,23 @@
 }
 #notesFromAuthors b{
   color: #EF5350;
+}
+#kagescanLogo {
+  width: 100%;
+}
+#credits {
+  font-size: 12pt;
+}
+.collection .collection-item{
+  background-color: black;
+}
+.spoiler {
+  color: #111;
+  background: #111;
+  transition: all 0.5s;
+  border-radius: 2px;
+  padding:2px;
+}
+.spoiler:hover {
+  color: white;
 }
