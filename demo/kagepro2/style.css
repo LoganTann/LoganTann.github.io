@@ -138,7 +138,7 @@
   top: 1em;
 }
 
-#languagePicker a {
+#languagePicker>a {
   display: inline-flex;
 }
 #worldIcon {
