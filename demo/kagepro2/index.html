@@ -52,7 +52,8 @@
               <li><a href="#!">Download the source code</a></li>
             </ul>
           </div>
-          <div class="col s12 m5 advanced">
+          <div class="col s12 m5 advanced hide-on-small-only">
+            <!-- Mobile users don't need that I think -->
             <p>Advanced</p>
             <ul>
               <li><a href="#!">Play the demo without assets preloading*</a></li>
@@ -86,7 +87,8 @@
 
       //var images = document.querySelectorAll('.charactersParallax');
       new simpleParallax(document.querySelector('.AyanoParallax>img'), {
-        orientation: "down"
+        orientation: "down left",
+        scale: 1.5
       });
 
       new simpleParallax(document.querySelector('.EneParallax>img'), {

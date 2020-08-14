@@ -43,7 +43,7 @@
       }
 
       .AyanoParallax>div>img {
-        top: 23vh;
+        top: 40vh;
         left:10vw;
       }
 
@@ -59,8 +59,7 @@
       #downloadPart {
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         z-index: 1;
         background: rgba(16,16,16,0.5);
         width: 55vw;
@@ -71,6 +70,22 @@
         padding: 1em;
         font-size: 1.2em;
         text-align: center;
+      }
+      @media screen and (max-width: 600px) {
+        #downloadPart {
+          top: 0;
+          left: 0;
+          transform: none;
+          width: 95vw;
+          position: relative;
+        }
+        .AyanoParallax .simpleParallax {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
       #downloadPart a {
         color: black;
@@ -86,4 +101,3 @@
         background: #642c32;
         font-size: 0.7em;
       }
-    
