@@ -76,22 +76,6 @@
         font-size: 1.2em;
         text-align: center;
       }
-      @media screen and (max-width: 600px) {
-        #downloadPart {
-          top: 0;
-          left: 0;
-          transform: none;
-          width: 95vw;
-          position: relative;
-        }
-        .AyanoParallax .simpleParallax {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
       #downloadPart a {
         color: black;
         background: #cc403f;
@@ -135,6 +119,7 @@
   position: fixed;
   right: 1em;
   top: 1em;
+  z-index: 1;
 }
 
 #languagePicker>a {
@@ -158,3 +143,38 @@
   height: 100%;
   margin-right: 0.5em;
 }
+
+      @media screen and (max-width: 600px) {
+        #downloadPart {
+          top: 0;
+          left: 0;
+          transform: none;
+          width: 95vw;
+          position: relative;
+        }
+        .AyanoParallax .simpleParallax {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        
+        #btnSect {
+          position: fixed;
+          right: auto;
+          bottom: 1px;
+          z-index: 1;
+          top: unset;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 1px;
+        } 
+        #Newsletter{
+          margin-left: 1px;
+        }
+        #Newsletter>a {
+          margin-top: 0;
+        }
+      }
