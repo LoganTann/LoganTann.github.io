@@ -19,19 +19,47 @@
     <script async src="../script.js" charset="utf-8"></script>
   </head>
   <body class="black white-text">
-    <div id="languagePicker">
-      <!-- Dropdown Trigger -->
-      <a class='dropdown-trigger btn white black-text' href='#!' data-target='dropdown1'>
-        <span id="worldIcon"></span>
-        Idioma : Español</a>
+    <div id="btnSect">
+      <div id="languagePicker">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn white black-text' href='#!' data-target='dropdown1'>
+          <span id="worldIcon"></span>
+          Language : English
+        </a>
 
-      <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="../es/" class="black-text">Español</a></li>
-        <li><a href="../en/">English</a></li>
-        <li><a href="../fr/">Français</a></li>
-      </ul>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="../en/" class="black-text">English</a></li>
+          <li><a href="../fr/">Français</a></li>
+          <li><a href="../es/">Español</a></li>
+        </ul>
+      </div>
+
+      <div id="Newsletter">
+        <!-- Dropdown Trigger -->
+        <a class='modal-trigger btn btn-large white black-text' href="#modal1">
+          <span id="mailIcon"></span>
+          Subscribe to<br>
+          Newsletter
+        </a>
+      </div>
     </div>
+    <div id="modal1" class="modal black-text">
+      <div class="modal-content">
+        <h4>Subscribe to the Newsletter</h4>
+        <p>Get updated when a new demo/patch is released !</p>
+        <form class="" action="subscribeMail.php" method="post">
+          <label for="email">Enter your email:</label>
+          <input type="email" name="email" required>
+
+          <input type="submit" name="Send" value="Send" class="btn">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+    </div>
+    
     <header>
       <img src="../logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
       <div></div>

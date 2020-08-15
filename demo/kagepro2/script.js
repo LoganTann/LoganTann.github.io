@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-  var elem = document.querySelector('.dropdown-trigger');
-  var instances = M.Dropdown.init(elem);
+  var i_dropdown = M.Dropdown.init(document.querySelector('.dropdown-trigger'));
+  var i_modal = M.Modal.init(document.querySelector('.modal'));
 
   new simpleParallax(document.querySelector('.AyanoParallax>img'), {
     orientation: "down left"
