@@ -1,76 +1,191 @@
-<!doctype html><html lang="" dir="ltr"><head><meta charset="utf-8"/>
-			<title>Retaining's Memories - Un fangame Kagerou Project</title>
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script><link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;family=Fredericka+the+Great&amp;family=Oswald&amp;display=swap" rel="stylesheet"/><script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/><!--Let browser know website is optimized for mobile--><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<link rel="stylesheet" href="../style.css"/><script async src="../script.js" charset="utf-8"></script></head>
-		<body class="black white-text">
-			<div id="btnSect">
-				<div id="languagePicker"><!-- Dropdown Trigger --><a class="dropdown-trigger btn white black-text truncate" href="#!" data-target="dropdown1"></a><!-- Dropdown Structure --><ul id="dropdown1" class="dropdown-content"> <li><a href="../fr/" class="black-text"></a></li>
-					<li><a href="../en/"></a></li>
-					<li><a href="../es/"></a></li>
-				</ul>
-			</div>
-			<div id="Newsletter"><!-- Dropdown Trigger --><a class="modal-trigger btn btn-large white black-text" href="#modal1"></a> </div>
-		</div>
-		<div id="modal1" class="modal black-text">
-			<div class="modal-content">
-				<h4></h4>
-				<p></p>
-				<form class="" action="../subscribeMail.php" method="post"><label for="email"></label><input type="email" name="email" required=""/><input type="submit" name="Envoyer" value="" class="btn"/></form>
-			</div>
-			<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat"></a></div>
-		</div>
-		<header><img src="../logo.png" alt="" class="animate__animated animate__fadeInDown"/><div></div>
-			<h2 class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;"></h2>
-		</header>
-		<section class="container flow-text">
-			<h2></h2>
-			<p></p>
-			<hr/>
-			<p class="FrederickaFont"></p>
-			<p></p>
-			<p></p>
-		</section>
-		<div class="AyanoParallax">
-			<section class="container" id="downloadPart">
-				<div class="">
-					<h2></h2>
-					<p> </p>
-					<p>
-					</p>
-				</div>
-				<div class="row valign-wrapper">
-					<div class="col s12 m7">
-						<p></p><ul><li><a href="../download/"></a></li>
-						<li><a href="../play/"></a></li>
-						<li><a href="../download/"></a></li>
-					</ul>
-				</div>
-				<div class="col s12 m5 advanced hide-on-small-only"><!-- Mobile users don't need that I think --><p></p><ul><li><a href="../download/?nopreload"></a></li>
-					<li><a href="https://logantann.github.io/kagepro2/"></a></li>
-					<li><a href="https://github.com/LoganTann/kagepro2/archive/master.zip"></a></li>
-				</ul>
-			</div>
-		</div>
-		<p></p>
-	</section><img class="charactersParallax" src="../Load_Ayano.png" alt=""/></div><section class="container" id="notesFromAuthors">
-	<h2 style="font-size: 2em;"></h2>
-	<p>{{{html[1]/body[1]/section[2]/p[1]/text()[7]}}}</p>
-	<p class="flow-text"></p>
-	<blockquote>
-		<p></p>
-		<p></p>
-		<p><b>{{{html[1]/body[1]/section[2]/blockquote[1]/p[3]/text()[1]}}}</b></p>
-		<p>{{{html[1]/body[1]/section[2]/blockquote[1]/p[4]/text()[2]}}}</p>
-	</blockquote>
-	<p></p>
-	<p>{{{html[1]/body[1]/section[2]/p[4]/text()[5]}}}</p>
-	<p>{{{html[1]/body[1]/section[2]/p[5]/text()[1]}}}</p></section><div class="EneParallax"><img class="charactersParallax" src="../Load_Ene.png" alt=""/></div><section class="container" id="credits">
-	<h2></h2>
-	<p class="OswaldFont flow-text"> </p>
-	<h4></h4><ul class="browser-default"><li></li>
-	<li></li>
-	<li></li>
-	<li></li></ul><h4></h4><p></p><ul class="browser-default"><li></li><li></li><li></li></ul><h4></h4><em></em><p></p><ul class="browser-default"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul><hr/><div class="row valign-wrapper"><a class="col s5 m3" href="https://kagescan.legtux.org/"><img id="kagescanLogo" alt="" src="https://kagescan.legtux.org/res/img/logo.svg"/></a><div class="col s7 m9 flow-text">  </div></div></section><script type="text/javascript">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Retaining's memories - A Kagerou Project Fangame</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Fredericka+the+Great&family=Oswald&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="../style.css">
+    <script async src="../script.js" charset="utf-8"></script>
+  </head>
+  <body class="black white-text">
+    <div id="btnSect">
+      <div id="languagePicker">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn white black-text truncate' href='#!' data-target='dropdown1'>
+          <span id="worldIcon"></span>
+          Langue : Français
+        </a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="../fr/" class="black-text">Français</a></li>
+          <li><a href="../en/">English</a></li>
+          <li><a href="../es/">Español</a></li>
+        </ul>
+      </div>
+
+      <div id="Newsletter">
+        <!-- Dropdown Trigger -->
+        <a class='modal-trigger btn btn-large white black-text' href="#modal1">
+          <span id="mailIcon"></span>
+          S'inscrire à<br>
+          la newsletter
+        </a>
+      </div>
+    </div>
+    <div id="modal1" class="modal black-text">
+      <div class="modal-content">
+        <h4>S'inscrire à la newsletter</h4>
+        <p>Soyez au courant lorsqu'une mise à jour/patch de la démo sera disponible !</p>
+        <form class="" action="../subscribeMail.php" method="post">
+          <label for="email">Votre Email:</label>
+          <input type="email" name="email" required>
+
+          <input type="submit" name="Envoyer" value="Envoyer" class="btn">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fermer</a>
+      </div>
+    </div>
+
+    <header>
+      <img src="../logo.png" alt="Retaining's Memories" class="animate__animated animate__fadeInDown">
+      <div></div>
+      <h2 class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">Le fangame Kagerou Project</h2>
+
+    </header>
+    <section class="container flow-text">
+      <h2>Il y a très longtemps ...</h2>
+      <p>Un monstre est apparu un 15 Août, solitaire. Il ne savait rien, et a alors cherché à en apprendre plus sur lui même et sur les humains.<br>
+        Après un certain temps, il a quitté ce sinistre monde. <b>Etait-ce une bonne idée d'essayer de comprendre les humains, au final?</b></p>
+      <hr>
+      <p class="FrederickaFont">Shintaro Kisaragi,</p>
+
+      <p>Un jeune garçon de dix huit ans, est devenu un NEET deux ans après <em>l'étrange disparation de ses trois seuls amis</em>. Un jour très chaud du mois d'Août, il est contraint de sortir dehors, sans chance puisqu'il se retrouve au milieu de la prise d'otages d'un groupe de terroristes.<br>
+      Après s'en être tiré de manière assez originale, il rejoint un groupe d'adolescents qui se désigne comme le Mekakushi Dan. Les membres de ce groupe ont survécu à un incident mortel par le passé, et ont des pouvoirs qu'ils appellent leur "Eye Ability".</p>
+
+      <p>Au fil du temps, Shintaro se rappelle petit à petit de certains souvenirs refoulés, sans savoir que ceux-ci vont révéler une tragédie intimement liée à son passé.</p>
+    </section>
+
+    <div class="AyanoParallax">
+      <section class="container" id="downloadPart">
+        <div class="">
+          <h2>Testez le jeu</h2>
+          <p>Basé sur les nombreuses routes de la série multimédia 'Kagerou Project' de Jin (aka. Shizen No Teki-P), Retaining's memories est un contenu à but non-lucratif crée par des fans, qui mélange un gameplay de visual novel et des mini-jeux. <p>
+        </div>
+        <div class="row valign-wrapper">
+          <div class="col s12 m7">
+            <p>Latest demo (2.99.0)</p>
+            <ul>
+              <li><a href="../download/">Download the windows build</a></li>
+              <li><a href="../play/">Play online on Kagescan *</a></li>
+              <li><a href="../download/">Download the source code</a></li>
+            </ul>
+          </div>
+          <div class="col s12 m5 advanced hide-on-small-only">
+            <!-- Mobile users don't need that I think -->
+            <p>Advanced</p>
+            <ul>
+              <li><a href="../download/?nopreload">Play the demo without assets preloading*</a></li>
+              <li><a href="https://logantann.github.io/kagepro2/">Play the nighly version online on Github*</a></li>
+              <li><a href="https://github.com/LoganTann/kagepro2/archive/master.zip">Download the nighly version source code</a></li>
+            </ul>
+          </div>
+        </div>
+        <p>* : We do not recommand playing the online version.</p>
+      </section>
+      <img class="charactersParallax" src="../Load_Ayano.png" alt="image">
+    </div>
+
+    <section class="container" id="notesFromAuthors">
+      <h2 style="font-size: 2em;">Recommandations</h2>
+      <p>Ce jeu a été créé afin d'offrir une vision d'ensemble sur la série Kagerou Project ainsi que d'exprimer notre passion et notre créativité.<br>
+						Ce jeu ne souhaite pas remplacer l'ensemble des contenus de la série ni proposer le contenu original de la série dans un but de piratage.<br>
+						Faute d'un effectif réduit, nous n'avons pas roujours créé nos propres assets, Ce jeu contient donc des extraits des oeuvres officielles (musique, images...) ne nous appartenant pas.<br>
+						Ce jeu offrant l'ensemble de l'histoire, il contient de nombreux spoilers. Nous vous prions d'acheter et nous vous recommandons de visionner les oeuvres originales au préalable afin de soutenir les auteurs !</p>
+
+      <p class="flow-text">Age et Avertissements</p>
+      <blockquote>
+        <p><b>Ce jeu est déconseillé aux moins de 12 ans</b> et s'apparente à la classification PEGI 12 ou ESRB Teen</p>
+        <p>Ne convient pas aux épileptiques. Ce jeu peut se connecter à internet. Pas de fonctionnalités multijoueur pour le moment.</p>
+        <p><b>Contient : des scènes de violence (dont sang, suicide, gore dans un environnement dessiné, imaginaire et non réaliste) ainsi que du langage grossier.</b> </p>
+        <p><b>Ne contient pas :</b> Ne contient pas de screamers (scènes d'horreur et de surprise); de scènes sexuelles; de jeux de hasard réalistes; de drogue; de discrimination et d'achats intégrés</p>
+      </blockquote>
+      <p>Nous vous recommandons de jouer au jeu dans sa version PC hors-ligne, conçu pour la meilleure expérience de jeu.</p>
+      <p>Si vous êtes contraints de jouer à la version en ligne, merci d'utiliser un navigateur à jour et populaire (firefox ou chrome/chromium) !<br>
+        En effet, ce jeu utilise des fonctionnalités expérimentales ou récentes de la programmation web.<br>
+        Assurez-vous d'avoir une bonne connection (non surtaxée) afin que le jeu puisse charger tous les assets dont il aurait besoin.</p>
+      <p>Nous vous recommandons vivement d'apprendre les contrôles dans le menu "aide".</p>
+    </section>
+
+    <div class="EneParallax">
+      <img class="charactersParallax" src="../Load_Ene.png" alt="image">
+    </div>
+
+    <section class="container" id="credits">
+      <h2>Credit List</h2>
+      <p class="OswaldFont flow-text">Note that a lot of the assets we use in the game were taken from official kagerou project content.<br>
+        This document does not detail the credit of these official works since they can easily be found online, but it should be said that the anime soundtracks and backgrounds, the character designs, the song mv illustrations, and the story belong to their original creators and owners, Jin, Sidu, ANANT GARDE EYES, Wanyappu, 1stplace etc...
+      </p>
+      <h4>General credits :</h4>
+      <ul class="browser-default">
+        <li>Programming:         Logan Tann</li>
+        <li>The game uses a visual novel engine called <a href="//monogatari.io">monogatari</a> and you can find its source code on <a href="https://github.com/Monogatari/Monogatari">GitHub</a>.<br>
+        Some things like Shin’s computer or soon-to-come mini games were totally made from scratch, so be sure to support our main programmer as well as the developers of monogatari!</li>
+        <li>Game logo :             Sandosan</li>
+        <li>Music : taken from the anime OST, the series’ songs, and 8 bit remixes by isonosuke</li>
+      </ul>
+      <h4>Prologue - The Old Days</h4>
+
+      <p>This part of the game is based on the drama CD of the same name. I hope you enjoyed the euclidean geometry. I have to admit I’m not very good at it...</p>
+      <ul class="browser-default">
+        <li>Writing :                 Logan Tann, Yoomster</li>
+        <li>Ayano and Shintaro’s sprites :     Maxence Porelli and Lucie Fournier</li>
+        <li>Backgrounds :             Eolienne, based on 3D models by Logan</li>
+      </ul>
+
+      <h4>Chapter 1 - Artificial Enemy</h4>
+
+      <em>Highlight the text to read spoilers of the game after Shintaro leaves his room!</em>
+      <p>This is a big mix of the ‘artificial enemy’ parts of each medium, <span class="spoiler">however, the subway part was totally made up! </span> <br>
+      Logan designed and programmed Shin’s computer from scratch, I hope you liked it! it still needs a cringe background though.<br>
+      <span class="spoiler">Just in case you’re curious, the subway backgrounds were made from the station champ de mars in Paris, a Tokyoite wagon and the map on the wall is London underground! I bet you have no idea who these mysterious kids you met on the train are… </span></p>
+
+      <ul class="browser-default">
+        <li>Writing :                 Eolienne, Yoomster</li>
+        <li>Shin’s room :                Lost time memory screenshots edited by Logan</li>
+        <li>Ene sprite :                Nahusnab</li>
+        <li>Ene flashback sprite :        Sidu’s design edited by Eolienne</li>
+
+        <li>street :                MCA screenshots edited by Eolienne</li>
+        <li>subway :                Eolienne</li>
+        <li>kids in the subway :             joe kinging</li>
+        <li>Momo poster :             Capucine</li>
+      </ul>
+
+
+      <hr>
+      <div class="row valign-wrapper">
+        <a class="col s5 m3" href="https://kagescan.legtux.org/"><img id="kagescanLogo" alt="KageScan - Logo" src="https://kagescan.legtux.org/res/img/logo.svg"></a>
+        <div class="col s7 m9 flow-text">
+          Project maintained and directed by Kagescan's <a href="https://www.instagram.com/kagerouproject_fr">Instagram</a> Team (ShinProg - Eolienne)
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
 
       //var images = document.querySelectorAll('.charactersParallax');
       new simpleParallax(document.querySelector('.AyanoParallax>img'), {
@@ -80,4 +195,6 @@
       new simpleParallax(document.querySelector('.EneParallax>img'), {
         orientation: "up right"
       });
-    </script></body></html>
+    </script>
+  </body>
+</html>
