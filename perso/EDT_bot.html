@@ -153,7 +153,7 @@
           } else if (letter == "D") { //  Dimanche - Lundi
             retval += days[date.getDay()];
           } else if (letter == "m") { // 0 - 11
-            retval += date.getMonth();
+            retval += date.getMonth() + 1;
           } else if (letter == "M") { // Janvier - Février
             retval += months[date.getMonth()];
           } else if (letter == "Y") { // 2020
