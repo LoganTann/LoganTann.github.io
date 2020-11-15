@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Emploi du temps vers reminder bot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app" class="container-xl px-3 my-5 markdown-body">
+      <!--div id="fixedNav" v-bind:class="isFixedNavHidden">
+        <div @click = "fixedNavHidden = !fixedNavHidden" style="text-align: center;">
+          <a href="#!" v-if="fixedNavHidden">Show &#8615;</a>
+          <a href="#!" v-else="">Hide &#8613;</a>
+        </div>
+
+        <div class="content">
+          <a href="#config">Configuration</a>
+          <p v-if="checkIfTemplateOkay()">
+            <a href="#valeurs"  >Table des valeurs</a><br>
+            <a href="#commandes"  v-if="checkIfTemplateOkay()">Commandes générées</a>
+          </p>
+          <p v-else="">*template incorrect*</p>
+          <a href="#!" @click="saveData">Sauvegarder les données</a>
+        </div>
+      </div-->
+      <h1>Gestion du système de notifications de V-ro</h1>
+      <p>C'est un outil koul</p>
+      <p>Lundi courant : {{current1stMonday}} </p>
+
+      <select v-model="currentGroupSelected">
+        <option v-for="(webhookURL, name) in groupsWebhooks" :value="name">Groupe {{name}}</option>
+      </select>
+
+      <p>Groupe sélectionné : {{currentGroupSelected}}</p>
+    </div>
+    <script src="V-ro_reminder.js"></script>
+    <link rel="stylesheet" href="V-ro_reminder.css">
+  </body>
+</html>
