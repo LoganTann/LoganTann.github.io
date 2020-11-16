@@ -1,0 +1,54 @@
+body {
+  font-family: sans-serif;
+  background-color: #2C2F33;
+  color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html, #app, #appContent {
+  height: 100%;
+}
+#introBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+#introBox .btn {
+  color: white;
+  background: #7289DA;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em;
+}
+/*
+Bleu-violet
+#7289DA
+CMYK 56, 43, 0, 0
+Blanc immaculé
+#FFFFFF
+CMYK 0, 0, 0, 0
+Gris-violet
+#99AAB5
+CMYK 42, 26, 23, 0
+Sombre, mais pas noir
+#2C2F33
+CMYK 74, 65, 59, 60
+Pas noir mais presque
+#23272A
+CMYK 75, 66, 61, 67
+Vraiment noir
+#000000
+CMYK 0, 0, 0, 100
+*/
+#appContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+#introBox {
+  width: 50%;
+  align-self: center;
+}

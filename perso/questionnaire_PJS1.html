@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Questionnaire sur le numérique et l'éducation</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="questionnaire_PJS1.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="appContent">
+        <!-- INTRODUCTION --------------------->
+        <div id="introBox" v-if="introduction_step < 3">
+          <div v-if="introduction_step == 0">
+            <p>
+              Bonjour, je suis Logan, un étudiant en informatique à l'IUT de l'Université de Paris.<br>
+              Dans le cadre de nos études, nous devons mener un PJS1. Le PJS1, c'est tout simplement un grand exposé en groupe dont le rapport devra être écrit sur du support numérique tel qu'un site web.
+            </p>
+            <p>
+              Finalement, c'est assez proche des TPEs que l'on peut avoir en classe première générale.
+            </p>
+          </div>
+          <div v-else-if="introduction_step == 1">
+            <p>Le sujet de nos recherches porte sur l'utilisation du numérique en classe, manier cet outil au service de l'éducation, tant du côté du prof que du côté des élèves.<br>
+              Ce formulaire s'adapte en fonction de vos réponses.
+            </p>
+
+            Tout en répondant à nos questions, nous donnons des éléments de nos résultats de recherche, on espère donc que vous apprendrez certains points de notre sujet tout en faisant cela !
+          </div>
+          <div v-else="">
+            <p>Faisons connaissance !<br>
+              Quel est votre joli prénom d'usage (si vous tenez à rester anonyme, inventez un prénom) </p>
+
+              <input type="text" v-model="player_name">
+          </div>
+          <div class="">
+            <a href="#!" class="btn" @click="introduction_nextStep()">{{button_msg[introduction_step]}}</a>
+          </div>
+
+        </div>
+
+        <!-- CONTENU DU TCHAT --------------------->
+        <div v-else="">
+
+          Voici le questionnaire, {{player_name}} !
+
+        </div>
+      </div>
+    </div>
+    <script src="questionnaire_PJS1.js" charset="utf-8"></script>
+  </body>
+</html>
