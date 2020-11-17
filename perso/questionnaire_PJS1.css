@@ -1,19 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+
 body {
-  font-family: sans-serif;
-  background-color: #2C2F33;
+  font-family: 'Barlow', sans-serif;
+  background-color: #f2bf38;
   color: rgba(255, 255, 255, 0.7);
   height: 100%;
   margin: 0;
   padding: 0;
+  color: black;
 }
 html, #app, #appContent {
   height: 100%;
 }
-#introBox {
+#appContent {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*width: 980px;
+  max-width: 90vw;
+  margin-right: auto;
+  margin-left: auto;*/
+}
+#introBox {
+  width: 50%;
+  display: flex;
+  align-self: center;
   flex-direction: column;
   justify-content: space-between;
   min-height: 50vh;
+  max-height: 90vh;
 }
 #introBox .btn {
   color: white;
@@ -21,6 +36,10 @@ html, #app, #appContent {
   border-radius: 10px;
   padding: 1em;
   margin: 1em;
+}
+img.profile_pic {
+  width: 44px;
+  height: 44px;
 }
 .messageContainer {
   display: flex;
@@ -35,6 +54,9 @@ html, #app, #appContent {
 .emoji {
   width: 1em;
   height: 1em;
+}
+#tchat {
+  background-color: #f7c851;
 }
 /*
 Bleu-violet
@@ -56,13 +78,3 @@ Vraiment noir
 #000000
 CMYK 0, 0, 0, 100
 */
-#appContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-#introBox {
-  width: 50%;
-  align-self: center;
-}

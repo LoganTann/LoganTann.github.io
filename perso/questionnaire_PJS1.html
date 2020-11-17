@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <title>Questionnaire sur le numérique et l'éducation</title>
     <script src="vue.js"></script>
+    <script src="marked.min.js"></script>
     <link rel="stylesheet" href="questionnaire_PJS1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="stylesheet" href="normalize.css"> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
   </head>
   <body>
     <div id="app">
-      <div id="appContent">
+      <div id="appContent" class="container">
         <!-- INTRODUCTION --------------------->
         <div id="introBox" v-if="introduction_step < 3">
+          <img src="logo_numedu_txt.png" alt="Numérique & Education" />
           <div v-if="introduction_step == 0">
             <p>
               Bonjour, je suis Logan, un étudiant en informatique à l'IUT de l'Université de Paris.<br>
@@ -43,28 +49,31 @@
         <div v-else="" id="tchat">
           <div class="history">
             <div class="messageContainer" v-for="msg in bot_conversation">
-              <img class="icon" :src="entities[msg.by].profile_pic"></img>
+              <img class="profile_pic" :src="entities[msg.by].profile_pic"></img>
               <div class="msgbody">
                 <div class="">
                   {{entities[msg.by].name}}
                 </div>
-                <div class="" v-html="msg.msg">
-
-                </div>
                 <div v-if="msg.opensModal">
-                  <img src="eyeglasses.png" alt="" class="emoji">
-                  Cliquez pour en savoir plus
+                  <a href="#!" @click="openModal(msg.msg)">
+                    <img src="eyeglasses.png" alt="" class="emoji">
+                    Cliquez pour en savoir plus
+                  </a>
+                </div>
+                <div v-else="" v-html="msg.msg">
+
                 </div>
               </div>
             </div>
           </div>
           <div class="input">
-
+            <textarea id="userTextInput" name="name" rows="4" cols="80" style="resize: none;"></textarea>
+            <button type="button" class="btn btn-primary" id="submitBtn">Envoyer</button>
           </div>
         </div>
 
       </div>
-      <div v-if="modalContainerOpened()">
+      <div v-if="modalContent != 0">
 
       </div>
     </div>

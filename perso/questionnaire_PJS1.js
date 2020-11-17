@@ -1,6 +1,7 @@
 
 const script = {};
 const GET_TEXT = "get text"; // just to add the color
+
 script["start"] = [
   "Tout d'abord, rien qu'en lisant la présentation de notre sujet, que savez-vous dessus.<br> Quels sont vos \"à-priori\" sur ce sujet ?",
   GET_TEXT, // wainting text
@@ -70,25 +71,30 @@ const app = new Vue({
   data: {
     introduction_step: 0,
     button_msg: ["Bonjour Logan !", "Très bien, c'est parti !", "Continuer"],
-    bot_conversation: [
-      {by: "bot", msg: "Salut 👋!"}
-    ],
     entities: {
       bot: {
         name: "Logan",
-        profile_pic: "https://cdn.discordapp.com/avatars/272777471311740929/38b1ea1854ab8feb4de04004fe01f99b.webp?size=32"
+        profile_pic: "https://cdn.discordapp.com/avatars/272777471311740929/38b1ea1854ab8feb4de04004fe01f99b.webp?size=64"
       },
       player: {
         name: "Canard-Man",
-        profile_pic: "https://cdn.discordapp.com/avatars/451467396612489238/ca5c1080353f8b7a89ad4f791c6e7ef8.webp?size=32"
+        profile_pic: "https://cdn.discordapp.com/avatars/451467396612489238/ca5c1080353f8b7a89ad4f791c6e7ef8.webp?size=64"
       }
-    }
+    },
+
+    modalContent: 0,
+    bot_conversation: [
+      {by: "bot", msg: "Salut 👋!"}
+    ]
   },
   computed: {
   },
   methods: {
     introduction_nextStep() {
       this.introduction_step++;
+      if (this.introduction_step == 3) {
+        console.log(this.runLabel());
+      }
     },
 
     //tchatbot commands
@@ -144,20 +150,29 @@ const app = new Vue({
       }
       return "ok";
     },
+
     async cmd_getText() {
-      const reply = window.prompt("Entrée attendue : ");
-      app.bot_conversation.push({
-        by: "player",
-        msg: reply
+      return new Promise(function(resolve, reject) {
+        const submitBtn = document.getElementById('submitBtn');
+        const userTextInput =  document.getElementById('userTextInput');
+        if (!(submitBtn instanceof Element) || !(userTextInput instanceof Element) ) {
+          throw "did not found Submit Btn or userTextInput";
+        }
+        submitBtn.addEventListener("click", function(){
+          app.bot_conversation.push({
+            by: "player",
+            msg: marked(userTextInput.value)
+          });
+          resolve();
+        }, {once: true});
       });
-      return true;
     },
     async cmd_say(arg) {
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
           app.bot_conversation.push({
             by: "bot",
-            msg: arg
+            msg: marked(arg)
           });
           resolve();
         }, 1000);
@@ -176,8 +191,17 @@ const app = new Vue({
       return "end";
     },
     async cmd_modal(arg) {
-      console.log(">> cmd_modal: ", modals[arg]);
-      return true;
+      return new Promise(function(resolve, reject) {
+        app.bot_conversation.push({
+          by: "bot",
+          opensModal: true,
+          msg: marked(arg)
+        });
+        setTimeout(resolve, 2000);
+      });
     }
+  },
+  created() {
+
   }
 });
