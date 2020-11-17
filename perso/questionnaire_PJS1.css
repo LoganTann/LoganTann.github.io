@@ -32,6 +32,10 @@ html, #app, #appContent {
 .msgbody {
   margin-left: 1em;
 }
+.emoji {
+  width: 1em;
+  height: 1em;
+}
 /*
 Bleu-violet
 #7289DA

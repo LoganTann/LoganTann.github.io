@@ -46,10 +46,14 @@
               <img class="icon" :src="entities[msg.by].profile_pic"></img>
               <div class="msgbody">
                 <div class="">
-                  {{msg.by}}
+                  {{entities[msg.by].name}}
                 </div>
-                <div class="">
-                  {{msg.msg}}
+                <div class="" v-html="msg.msg">
+
+                </div>
+                <div v-if="msg.opensModal">
+                  <img src="eyeglasses.png" alt="" class="emoji">
+                  Cliquez pour en savoir plus
                 </div>
               </div>
             </div>
@@ -57,9 +61,11 @@
           <div class="input">
 
           </div>
-          Voici le questionnaire, {{entities.player.name}} !
-
         </div>
+
+      </div>
+      <div v-if="modalContainerOpened()">
+
       </div>
     </div>
     <script src="questionnaire_PJS1.js" charset="utf-8"></script>
