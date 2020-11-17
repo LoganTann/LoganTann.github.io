@@ -31,7 +31,7 @@
             <p>Faisons connaissance !<br>
               Quel est votre joli prénom d'usage (si vous tenez à rester anonyme, inventez un prénom) </p>
 
-              <input type="text" v-model="player_name">
+              <input type="text" v-model="entities.player.name">
           </div>
           <div class="">
             <a href="#!" class="btn" @click="introduction_nextStep()">{{button_msg[introduction_step]}}</a>
@@ -42,12 +42,22 @@
         <!-- CONTENU DU TCHAT --------------------->
         <div v-else="" id="tchat">
           <div class="history">
-
+            <div class="messageContainer" v-for="msg in bot_conversation">
+              <img class="icon" :src="entities[msg.by].profile_pic"></img>
+              <div class="msgbody">
+                <div class="">
+                  {{msg.by}}
+                </div>
+                <div class="">
+                  {{msg.msg}}
+                </div>
+              </div>
+            </div>
           </div>
           <div class="input">
-            
+
           </div>
-          Voici le questionnaire, {{player_name}} !
+          Voici le questionnaire, {{entities.player.name}} !
 
         </div>
       </div>

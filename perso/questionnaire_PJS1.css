@@ -22,6 +22,16 @@ html, #app, #appContent {
   padding: 1em;
   margin: 1em;
 }
+.messageContainer {
+  display: flex;
+  margin: 1em;
+}
+.messageContainer:hover {
+  background: #23272A;
+}
+.msgbody {
+  margin-left: 1em;
+}
 /*
 Bleu-violet
 #7289DA
