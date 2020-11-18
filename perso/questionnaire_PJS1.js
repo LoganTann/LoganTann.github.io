@@ -78,11 +78,13 @@ const app = new Vue({
       },
       player: {
         name: "Canard-Man",
-        profile_pic: "https://cdn.discordapp.com/avatars/451467396612489238/ca5c1080353f8b7a89ad4f791c6e7ef8.webp?size=64"
+        profile_pic: "V-ro.png"
       }
     },
 
     modalContent: 0,
+    inputState: "nothing",
+    sentText: 0,
     bot_conversation: [
       {by: "bot", msg: "Salut 👋!"}
     ]
@@ -90,6 +92,13 @@ const app = new Vue({
   computed: {
   },
   methods: {
+    sendMessage() {
+      const textarea = document.getElementById("userTextInput");
+      if (!(textarea instanceof Element)) {
+        throw "Did not found textarea";
+      }
+      this.sentText = textarea.value;
+    },
     introduction_nextStep() {
       this.introduction_step++;
       if (this.introduction_step == 3) {
@@ -153,18 +162,20 @@ const app = new Vue({
 
     async cmd_getText() {
       return new Promise(function(resolve, reject) {
-        const submitBtn = document.getElementById('submitBtn');
-        const userTextInput =  document.getElementById('userTextInput');
-        if (!(submitBtn instanceof Element) || !(userTextInput instanceof Element) ) {
-          throw "did not found Submit Btn or userTextInput";
-        }
-        submitBtn.addEventListener("click", function(){
-          app.bot_conversation.push({
-            by: "player",
-            msg: marked(userTextInput.value)
-          });
-          resolve();
-        }, {once: true});
+        app.inputState = "waitingText";
+        const inter = setInterval(function () {
+          if (app.sentText !== 0) {
+            // User sent a message
+            app.bot_conversation.push({
+              by: "player",
+              msg: marked(app.sentText)
+            });
+            app.inputState = "nothing";
+            app.sentText = 0;
+            clearInterval(inter);
+            resolve();
+          }
+        }, 100);
       });
     },
     async cmd_say(arg) {
@@ -191,14 +202,22 @@ const app = new Vue({
       return "end";
     },
     async cmd_modal(arg) {
-      return new Promise(function(resolve, reject) {
-        app.bot_conversation.push({
-          by: "bot",
-          opensModal: true,
-          msg: marked(arg)
+        return new Promise(function(resolve, reject) {
+          app.inputState = "waitingContinue";
+          app.bot_conversation.push({
+            by: "bot",
+            opensModal: true,
+            msg: marked(arg)
+          });
+          const inter = setInterval(function () {
+            if (app.sentText !== 0) {
+              app.inputState = "nothing";
+              app.sentText = 0;
+              clearInterval(inter);
+              resolve();
+            }
+          }, 100);
         });
-        setTimeout(resolve, 2000);
-      });
     }
   },
   created() {

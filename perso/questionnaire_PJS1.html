@@ -67,14 +67,30 @@
             </div>
           </div>
           <div class="input">
-            <textarea id="userTextInput" name="name" rows="4" cols="80" style="resize: none;"></textarea>
-            <button type="button" class="btn btn-primary" id="submitBtn">Envoyer</button>
+            <div class="inputText" v-if='inputState == "waitingText"'>
+              <textarea id="userTextInput" name="name" rows="4" cols="80" class="form-control" ></textarea>
+              <button type="button" class="btn btn-primary" @click="sendMessage">Envoyer</button>
+            </div>
+            <div class="inputBtns" v-else-if='inputState == "waitingChoice"'>
+
+            </div>
+            <div class="inputContinue" v-else-if='inputState == "waitingContinue"'>
+              <button type="button" class="btn btn-primary" @click="sentText = 1">Continuer</button>
+            </div>
+            <div class="inputDisabled" v-else="">
+              ...
+            </div>
           </div>
         </div>
 
       </div>
       <div v-if="modalContent != 0">
+        <div :html="modalContent">
 
+        </div>
+        <div class="">
+          <button type="button" name="closeModal">Fermer et continuer</button>
+        </div>
       </div>
     </div>
     <script src="questionnaire_PJS1.js" charset="utf-8"></script>
