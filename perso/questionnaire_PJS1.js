@@ -83,6 +83,7 @@ const app = new Vue({
     },
 
     modalContent: 0,
+    choicesContent: {"Continuer": "next"},
     inputState: "nothing",
     sentText: 0,
     bot_conversation: [
@@ -149,7 +150,10 @@ const app = new Vue({
             await this.cmd_modal(command_argument);
             break;
           case "jump":
-            return await this.runLabel(command_argument);
+            console.log("jump ok");
+            const jmpRetval = await this.runLabel(command_argument);
+            console.log("jump fini");
+            return jmpRetval;
             break;
           default:
             await this.cmd_say(cmd);
@@ -158,6 +162,7 @@ const app = new Vue({
       } else if (typeof cmd === "object") {
         if (typeof cmd.choice === "string") {
           const result = await this.cmd_choice(cmd);
+          console.log(result);
           this.evalCmd(result);
         } else {
           console.error(`object should be a choice`);
@@ -196,16 +201,27 @@ const app = new Vue({
       });
     },
     async cmd_choice(choiceObj) {
-      for (let question in choiceObj) {
-        if (question == "choice") {
-          alert(choiceObj[question]);
-          continue;
-        }
-        if (window.confirm(question)) {
-          return choiceObj[question];
-        }
-      }
-      return "end";
+      return new Promise(function(resolve, reject) {
+        app.inputState = "waitingChoice";
+        app.choicesContent = choiceObj;
+
+        const inter = setInterval(function () {
+          if (app.sentText !== 0) {
+            // User sent a message
+            app.bot_conversation.push({
+              by: "player",
+              msg: app.sentText
+            });
+            app.inputState = "nothing";
+            const retval = choiceObj[app.sentText];
+            console.log(choiceObj, choiceObj[app.sentText], app.sentText)
+
+            app.sentText = 0;
+            clearInterval(inter);
+            resolve(retval);
+          }
+        }, 100);
+      });
     },
     async cmd_modal(arg) {
         return new Promise(function(resolve, reject) {

@@ -75,7 +75,12 @@
               <button type="button" class="btn btn-primary" @click="sendMessage">Envoyer</button>
             </div>
             <div class="inputBtns" v-else-if='inputState == "waitingChoice"'>
-
+              <div class="description">
+                {{choicesContent.choice}}
+              </div>
+              <div class="buttons_conntainer">
+                <button type="button" v-for="(action, text) in choicesContent" @click="sentText = text" v-if="text != 'choice'" class="btn btn-primary btn-sm btn-block">{{text}}</button>
+              </div>
             </div>
             <div class="inputContinue" v-else-if='inputState == "waitingContinue"'>
               <button type="button" class="btn btn-primary" @click="sentText = 1">Continuer</button>
