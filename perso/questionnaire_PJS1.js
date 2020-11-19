@@ -99,6 +99,12 @@ const app = new Vue({
       }
       this.sentText = textarea.value;
     },
+    openModal(modalContent) {
+      this.modalContent = marked(modalContent);
+    },
+    closeModal() {
+      this.modalContent = 0;
+    },
     introduction_nextStep() {
       this.introduction_step++;
       if (this.introduction_step == 3) {
@@ -207,7 +213,7 @@ const app = new Vue({
           app.bot_conversation.push({
             by: "bot",
             opensModal: true,
-            msg: marked(arg)
+            msg: marked(modals[arg])
           });
           const inter = setInterval(function () {
             if (app.sentText !== 0) {

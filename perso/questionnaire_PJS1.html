@@ -2,20 +2,23 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Questionnaire sur le numérique et l'éducation</title>
+
     <script src="vue.js"></script>
     <script src="marked.min.js"></script>
-    <link rel="stylesheet" href="questionnaire_PJS1.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <!-- <link rel="stylesheet" href="normalize.css"> -->
     <link rel="stylesheet" href="bootstrap.min.css">
+
+    <link rel="stylesheet" href="questionnaire_PJS1.css">
 
   </head>
   <body>
     <div id="app">
-      <div id="appContent" class="container">
+      <div id="appContent" v-bind:class="{ inactive: modalContent != 0 }">
         <!-- INTRODUCTION --------------------->
-        <div id="introBox" v-if="introduction_step < 3">
+        <div id="introBox" v-if="introduction_step < 3" class="container" >
           <img src="logo_numedu_txt.png" alt="Numérique & Education" />
           <div v-if="introduction_step == 0">
             <p>
@@ -84,14 +87,30 @@
         </div>
 
       </div>
-      <div v-if="modalContent != 0">
-        <div :html="modalContent">
 
-        </div>
-        <div class="">
-          <button type="button" name="closeModal">Fermer et continuer</button>
+
+      <!-- POPUP --------------------->
+      <div v-if="modalContent != 0" class="modal fade show" style="display: block; overflow: auto;">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">
+                <img src="eyeglasses.png" alt="" class="emoji">
+                Explication</h5>
+              <button type="button" @click="closeModal" class="close">
+                <span>×</span>
+              </button>
+            </div>
+            <div class="modal-body" v-html="modalContent">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" @click="closeModal">Fermer</button>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
     <script src="questionnaire_PJS1.js" charset="utf-8"></script>
   </body>

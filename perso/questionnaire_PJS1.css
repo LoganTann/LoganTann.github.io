@@ -2,12 +2,12 @@
 
 body {
   font-family: 'Barlow', sans-serif;
-  background-color: #f2bf38;
   color: rgba(255, 255, 255, 0.7);
   height: 100%;
   margin: 0;
   padding: 0;
   color: black;
+    background-color: #f2bf38;
 }
 html, #app, #appContent {
   height: 100%;
@@ -20,6 +20,13 @@ html, #app, #appContent {
   max-width: 90vw;
   margin-right: auto;
   margin-left: auto;*/
+}
+
+#tchat {
+  background-color: #f7c851;
+}
+.inactive {
+  filter: brightness(80%) blur(5px);
 }
 #introBox {
   width: 50%;
@@ -54,9 +61,6 @@ img.profile_pic {
 .emoji {
   width: 1em;
   height: 1em;
-}
-#tchat {
-  background-color: #f7c851;
 }
 /*
 Bleu-violet
