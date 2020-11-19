@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-    background-color: #f2bf38;
+  background-color: #f2bf38;
 }
 html, #app, #appContent {
   height: 100%;
@@ -20,13 +20,14 @@ html, #app, #appContent {
   max-width: 90vw;
   margin-right: auto;
   margin-left: auto;*/
+  transition: all 0.5s;
 }
 
 #tchat {
   background-color: #f7c851;
 }
 .inactive {
-  filter: brightness(80%) blur(5px);
+  filter: blur(5px);
 }
 #introBox {
   width: 50%;
@@ -53,7 +54,7 @@ img.profile_pic {
   margin: 1em;
 }
 .messageContainer:hover {
-  background: #23272A;
+  background: #f2bf38;
 }
 .msgbody {
   margin-left: 1em;

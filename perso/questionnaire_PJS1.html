@@ -19,7 +19,9 @@
       <div id="appContent" v-bind:class="{ inactive: modalContent != 0 }">
         <!-- INTRODUCTION --------------------->
         <div id="introBox" v-if="introduction_step < 3" class="container" >
-          <img src="logo_numedu_txt.png" alt="Numérique & Education" />
+          <div>
+            <img src="logo_numedu_txt.png" alt="Numérique & Education"/>
+          </div>
           <div v-if="introduction_step == 0">
             <p>
               Bonjour, je suis Logan, un étudiant en informatique à l'IUT de l'Université de Paris.<br>

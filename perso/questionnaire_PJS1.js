@@ -106,10 +106,11 @@ const app = new Vue({
     closeModal() {
       this.modalContent = 0;
     },
-    introduction_nextStep() {
+    async introduction_nextStep() {
       this.introduction_step++;
       if (this.introduction_step == 3) {
-        console.log(this.runLabel());
+        await this.runLabel();
+        alert("programme terminé !!!");
       }
     },
 
