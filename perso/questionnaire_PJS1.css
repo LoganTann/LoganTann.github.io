@@ -38,10 +38,9 @@ body {
 #tchat .input {
   padding: 1em;
 }
-#tchat .input>div {
-  display: flex;
-}
-#tchat .input button {
+
+
+.inputText button, .inputContinue button {
   margin: 1em;
 }
 
@@ -49,8 +48,8 @@ body {
   filter: blur(5px);
 }
 #introBox {
-  width: 50%;
   align-self: center;
+  overflow-y: auto;
   min-height: 50vh;
   max-height: 90vh;
 }

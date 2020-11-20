@@ -18,13 +18,16 @@
   <div id="app" class="row">
     <div class="col-sm-12 col-md-2"  v-bind:class="{ inactive: modalContent != 0 }" >
       <img src="logo_numedu_txt.png" alt="Numérique & Education" style="max-width: 95%;"/>
+      <div class="d-none d-md-block">
+        <h1>Questionnaire</h1>
+      </div>
     </div>
-    <div class="col-sm-12 col-md-1"><!--empty --></div>
+    <div class="col-sm-12 col-md-2"><!--empty --></div>
     <div class="col-sm-12 col-md-7 col-lg-7 "  v-bind:class="{ inactive: modalContent != 0 }" >
       <div id="appContent" class="tablet">
 
         <!-- INTRODUCTION --------------------->
-        <div id="introBox" v-if="introduction_step < 3" >
+        <div id="introBox" v-if="introduction_step < 3" class="container d-flex flex-column justify-content-between">
           <div v-if="introduction_step == 0">
             <p>
               Bonjour, je suis Logan, un étudiant en informatique à l'IUT de l'Université de Paris.<br>
@@ -45,10 +48,10 @@
             <p>Faisons connaissance !<br>
               Quel est votre joli prénom d'usage (si vous tenez à rester anonyme, inventez un prénom) </p>
 
-              <input type="text" v-model="entities.player.name">
+              <input type="text" class="form-control" v-model="entities.player.name">
           </div>
-          <div class="">
-            <a href="#!" class="btn" @click="introduction_nextStep()">{{button_msg[introduction_step]}}</a>
+          <div class="row">
+            <a href="#!" class="btn btn-lg col-sm-12 col-lg-7 ml-auto" @click="introduction_nextStep()">{{button_msg[introduction_step]}}</a>
           </div>
         </div>
 
@@ -76,9 +79,11 @@
           </div>
 
           <div class="input">
-            <div class="inputText" v-if='inputState == "waitingText"'>
+            <div class="inputText d-flex" v-if='inputState == "waitingText"'>
               <textarea id="userTextInput" name="name" rows="4" cols="80" class="form-control" ></textarea>
-              <button type="button" class="btn btn-primary" @click="sendMessage">Envoyer</button>
+              <button type="button" class="btn btn-primary" @click="sendMessage">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-reply-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9.079 11.9l4.568-3.281a.719.719 0 0 0 0-1.238L9.079 4.1A.716.716 0 0 0 8 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z"/></svg>
+              </button>
             </div>
             <div class="inputBtns" v-else-if='inputState == "waitingChoice"'>
               <div class="description">
@@ -92,7 +97,7 @@
               <button type="button" class="btn btn-primary" @click="sentText = 1">Continuer</button>
             </div>
             <div class="inputDisabled" v-else="">
-              ...
+              <span v-if="isBotTyping"> {{entities["bot"].name}} est en train d'écrire... </span>
             </div>
           </div>
         </div> <!-- tchat-->

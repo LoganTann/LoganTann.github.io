@@ -92,18 +92,29 @@ const app = new Vue({
   },
   watch: {
     bot_conversation: function (val, oldVal) {
-       // DOM not updated yet
-       this.$nextTick(function () {
-           // DOM updated
-           console.log("new message :)");
-           // this.first_load = true;
-           // this.scroll_bottom();
-       });
+      this.autoscroll();
     }
   },
   computed: {
   },
   methods: {
+    autoscroll() {
+      this.$nextTick(function () {
+        const history = document.querySelector("#tchat .history");
+        if (! (history instanceof Element)) {
+          throw "Error : Couldn't find history...";
+        }
+        if (typeof history.scroll == "function") {
+          history.scroll({
+            top: history.scrollHeight,
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          history.scrollTop = history.scrollHeight;
+        }
+      });
+    },
     sendMessage() {
       const textarea = document.getElementById("userTextInput");
       if (!(textarea instanceof Element)) {
@@ -186,12 +197,13 @@ const app = new Vue({
     async cmd_getText() {
       return new Promise(function(resolve, reject) {
         app.inputState = "waitingText";
+        app.autoscroll();
         const inter = setInterval(function () {
           if (app.sentText !== 0) {
             // User sent a message
             app.bot_conversation.push({
               by: "player",
-              msg: marked(app.sentText)
+              msg: app.sentText.replace(/\n/g, "<br />")
             });
             app.inputState = "nothing";
             app.sentText = 0;
@@ -215,6 +227,7 @@ const app = new Vue({
     async cmd_choice(choiceObj) {
       return new Promise(function(resolve, reject) {
         app.inputState = "waitingChoice";
+        app.autoscroll();
         app.choicesContent = choiceObj;
 
         const inter = setInterval(function () {
@@ -238,6 +251,7 @@ const app = new Vue({
     async cmd_modal(arg) {
         return new Promise(function(resolve, reject) {
           app.inputState = "waitingContinue";
+          app.autoscroll();
           app.bot_conversation.push({
             by: "bot",
             opensModal: true,
