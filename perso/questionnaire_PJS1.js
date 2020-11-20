@@ -90,6 +90,17 @@ const app = new Vue({
       {by: "bot", msg: "Salut 👋!"}
     ]
   },
+  watch: {
+    bot_conversation: function (val, oldVal) {
+       // DOM not updated yet
+       this.$nextTick(function () {
+           // DOM updated
+           console.log("new message :)");
+           // this.first_load = true;
+           // this.scroll_bottom();
+       });
+    }
+  },
   computed: {
   },
   methods: {

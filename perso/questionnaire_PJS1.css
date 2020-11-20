@@ -1,40 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
-
+html, body {
+  height: 100%;
+}
 body {
+  display: flex;
+  align-items: center;
   font-family: 'Barlow', sans-serif;
   color: rgba(255, 255, 255, 0.7);
-  height: 100%;
   margin: 0;
   padding: 0;
   color: black;
   background-color: #f2bf38;
 }
-html, #app, #appContent {
-  height: 100%;
+#app {
+  margin: 0;
+  width: 100%;
 }
 #appContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*width: 980px;
-  max-width: 90vw;
-  margin-right: auto;
-  margin-left: auto;*/
+  height: 95vh;
   transition: all 0.5s;
 }
 
 #tchat {
   background-color: #f7c851;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+
+#tchat .history {
+  flex-grow: 1;
+  overflow: auto;
+}
+#tchat .input {
+  padding: 1em;
+}
+#tchat .input>div {
+  display: flex;
+}
+#tchat .input button {
+  margin: 1em;
+}
+
 .inactive {
   filter: blur(5px);
 }
 #introBox {
   width: 50%;
-  display: flex;
   align-self: center;
-  flex-direction: column;
-  justify-content: space-between;
   min-height: 50vh;
   max-height: 90vh;
 }
@@ -63,23 +79,47 @@ img.profile_pic {
   width: 1em;
   height: 1em;
 }
-/*
-Bleu-violet
-#7289DA
-CMYK 56, 43, 0, 0
-Blanc immaculé
-#FFFFFF
-CMYK 0, 0, 0, 0
-Gris-violet
-#99AAB5
-CMYK 42, 26, 23, 0
-Sombre, mais pas noir
-#2C2F33
-CMYK 74, 65, 59, 60
-Pas noir mais presque
-#23272A
-CMYK 75, 66, 61, 67
-Vraiment noir
-#000000
-CMYK 0, 0, 0, 100
-*/
+
+/* The device with borders */
+.tablet {
+  position: relative;
+  height: 100vh;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.tablet:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.tablet:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+@media (min-width:768px) {
+  .tablet {
+    max-width: 80vh;
+  }
+}
