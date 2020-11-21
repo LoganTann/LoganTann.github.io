@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
-html, body {
-  height: 100%;
+html, body, #app {
+  min-height: 100vh;
 }
 body {
   display: flex;
@@ -39,7 +39,12 @@ body {
   padding: 1em;
 }
 
-
+#navbar {
+  background: #0ec167;
+}
+#navbar img {
+   max-width: 95%;
+}
 .inputText button, .inputContinue button {
   margin: 1em;
 }
@@ -56,7 +61,6 @@ body {
 #introBox .btn {
   color: white;
   background: #7289DA;
-  border-radius: 10px;
   padding: 1em;
   margin: 1em;
 }
@@ -122,4 +126,9 @@ img.profile_pic {
   .tablet {
     max-width: 80vh;
   }
+}
+@media (max-width: 1100px) {
+    h1 {
+      font-size: 1.5em;
+    }
 }

@@ -27,9 +27,13 @@ const app = new Vue({
   watch: {
     bot_conversation: function (val, oldVal) {
       this.autoscroll();
+      localStorage.setItem('form_tchat_history', JSON.stringify(val, null, 2) );
     }
   },
   computed: {
+    submitValue() {
+      return JSON.stringify(this.bot_conversation, null, 2);
+    }
   },
   methods: {
     autoscroll() {
@@ -49,6 +53,18 @@ const app = new Vue({
         }
       });
     },
+    confirmAbortAndSave() {
+      if (confirm("Ouvrir le bouton d'envoi ne vous permettra pas de discuter davantage.\n Êtes vous sûr ?")) {
+        this.inputState = 'ended';
+      }
+    },
+    resetConversation() {
+      if (confirm("Toute votre progression sera supprimée. Vous pourrez ensuite recommencer le formulaire.\n Êtes vous sûr ?")) {
+        localStorage.removeItem("form_tchat_history");
+
+        window.location.reload();
+      }
+    },
     sendMessage() {
       const textarea = document.getElementById("userTextInput");
       if (!(textarea instanceof Element)) {
@@ -65,9 +81,41 @@ const app = new Vue({
     async introduction_nextStep() {
       this.introduction_step++;
       if (this.introduction_step == 3) {
-        await this.runLabel();
-        alert("programme terminé !!!");
+
+        if (localStorage.getItem('form_tchat_history')) {
+          this.openModal(
+             marked(
+              [
+              "## Ce n'est pas la première fois que vous venez (?)",
+              "Bonjour, nous avons détecté que vous avez déjà fait ce formulaire. Vous pouvez donc venir pour les raisons suivantes : ",
+              "* Vous avez quitté la page sans le faire exprès et vous voulez reprendre votre progression.",
+              "* Vous avez terminé le formulaire, et il y a eu une erreur lors de l'envoi des données",
+              "* Vous désirez recommencer le formulaire",
+              "",
+              "En fermant ce message, vous aurez accès à votre ancienne conversation, mais il ne sera plus possible de la continuer.  ",
+              "Un bouton pour recommencer est disponible, mais si jamais vous auriez la flemme de recommencer, vous pouvez tout de même nous envoyer la conversation non terminée via le bouton dédié.",
+              "",
+              "Si vous vous êtes arrêtés en cours de route, vous allez devoir copier vos données et les recoller une par une.",
+              "",
+              "Si vous venez en raison d'une erreur d'envoi, copiez la conversation, et envoyez-la par mail à logane.tann@etu.u-paris.fr"
+              ].join('\n')
+            )
+          );
+          this.bot_conversation = JSON.parse(localStorage.getItem('form_tchat_history'));
+          this.inputState = "ended";
+        } else {
+          await this.runLabel();
+        }
       }
+    },
+    escapeUserEntry(string) {
+      return string
+           .replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/"/g, "&quot;")
+           .replace(/'/g, "&#039;")
+           .replace(/\n/g, "<br />");
     },
 
     //tchatbot commands
@@ -91,7 +139,10 @@ const app = new Vue({
     async evalCmd(cmd) {
       if (typeof cmd === "string") {
         const cmdRegex = /(\w+)\s+(.+)/m;
-        if (cmd == "end") {
+        if (cmd == "end" || app.inputState == 'ended') {
+          if (app.inputState != 'ended') {
+            app.inputState = 'ended';
+          }
           return "end";
         } else if (cmd == "next") {
           return "ok";
@@ -117,7 +168,6 @@ const app = new Vue({
       } else if (typeof cmd === "object") {
         if (typeof cmd.choice === "string") {
           const result = await this.cmd_choice(cmd);
-          console.log(result);
           return await this.evalCmd(result);
         } else {
           console.error(`object should be a choice`);
@@ -135,7 +185,7 @@ const app = new Vue({
             // User sent a message
             app.bot_conversation.push({
               by: "player",
-              msg: app.sentText.replace(/\n/g, "<br />")
+              msg: app.escapeUserEntry(app.sentText)
             });
             app.inputState = "nothing";
             app.sentText = 0;

@@ -175,7 +175,7 @@ script["finish"]  = [
   "Avez-vous trouvé le support du formulaire original (questionnaire via tchatbot automatique) ?",
   GET_TEXT,
   "C'est la fin du questionnaire. Si jamais vous souhaiterez expliquer votre point de vue, ou avez besoin de conseils, n'hésitez-pas à m'envoyer un mail à ![logane.tann_arobase_u-paris point fr](https://user-images.githubusercontent.com/28659185/98438798-e1f17300-20ec-11eb-80b4-7117be52ec21.png) *(n'oubliez pas le e à la fin de logan)*",
-  "J'ai programmé ce questionnaire \"à la main\" avec Vue.JS. Si jamais vous souhaitez utiliser ce programme pour créer votre questionnaire, n'hésitez pas à regarder son code source sur [https://github.com/LoganTann/LoganTann.github.io/tree/master/questionnaire-numedu/](mon repository GitHub) ou à m'envoyer un e-mail.",
+  "J'ai programmé ce questionnaire \"à la main\" avec Vue.JS. Si jamais vous souhaitez utiliser ce programme pour créer votre questionnaire, n'hésitez pas à regarder son code source sur <a href=\"https://github.com/LoganTann/LoganTann.github.io/tree/master/questionnaire-numedu/\" target=\"_blank\">mon repository GitHub</a> ou à m'envoyer un e-mail.",
   "end"
 ];
 
