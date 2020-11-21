@@ -118,7 +118,7 @@ const app = new Vue({
         if (typeof cmd.choice === "string") {
           const result = await this.cmd_choice(cmd);
           console.log(result);
-          await this.evalCmd(result);
+          return await this.evalCmd(result);
         } else {
           console.error(`object should be a choice`);
         }
