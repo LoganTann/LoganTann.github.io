@@ -11,7 +11,7 @@ const app = new Vue({
       },
       player: {
         name: "Canard-Man",
-        profile_pic: "V-ro.png"
+        profile_pic: "../res/V-ro.png"
       }
     },
 
@@ -166,12 +166,12 @@ const app = new Vue({
           if (app.sentText !== 0) {
             // User sent a message
             app.bot_conversation.push({
-              by: "player",
-              msg: app.sentText
+              by: "bot",
+              msg: choiceObj.choice
             });
             app.bot_conversation.push({
               by: "player",
-              msg: choiceObj.choice
+              msg: app.sentText
             });
             app.inputState = "nothing";
             const retval = choiceObj[app.sentText];

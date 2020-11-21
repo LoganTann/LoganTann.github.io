@@ -104,8 +104,10 @@ script["polluNum"] = [
   GET_TEXT,
   "Y a-t-il tellement de messages dans votre boite e-mail qu'il devient impossible de faire le tri entre ce qui doit ou ne doit pas être supprimé ?",
   GET_TEXT,
+  "modal pollutionMails",
   "Utilisez-vous de manière personnelle le cloud (google docs, one drive, Wetransfer...) ? Pour quelles raisons ?",
   GET_TEXT,
+  "modal pollutionCloud",
   "Possédez-vous un appareil intelligent, tel qu'une enceinte, un électroménager ou une ampoule connectée ?",
   GET_TEXT,
   "Que pensez-vous de l'utilité de ces appareils ?",
@@ -120,42 +122,42 @@ script["polluNum"] = [
   GET_TEXT,
   "modal pollutionYoutube",
 ];
-,
-sciprt["santeNum"] = [,
+
+script["santeNum"] = [,
   "En ce moment même, des laboratoires du monde entier étudient l'impact des outils numériques sur les comportements du cerveau et de notre corps. Selon Daphné Bavelier, professeur en neuroscience à l'Université de Genève, il faut en moyenne 20 ans pour mener une étude et arriver à une conclusion. En comparaison, l'omniprésence des écrans est apparue il y a près de 8 ans.",,
   "La relation entre la santé et le numérique est encore pleine d'incertitudes. Nous tentons au cours de notre sujet de voir l'état des différentes hypothèses et expérimentations à propos de l'impact des outils numériques sur notre santé, qu'elle soit psychologique, physique ou sociale. Ce que nous cherchons à savoir dans notre axe à propos de la santé, c'est de définir les différentes limites à son application.",
   "Selon vous, à partir de quelle classe le numérique pourrait être introduit en tant qu'outil pédagogique ?",
-GET_TEXT,
-"modal observationsActuellesSante",
-"En parlant des effets secondaires, pensez-vous que les écrans nuisent au lien social ?",
-GET_TEXT,
-"modal ecransEtLienSocial",
-{
-  "choice": "Pensez-vous que les écrans peuvent entrainer la myopie ?",
-  "Oui ": "next",
-  "Je ne sais pas...": "next",
-  "Absurde !": "next",
-  "Je n'ai jamais entendu parler de cette idée là.": "next"
-}, // waiting choice
-"modal ecransEtMyopie",
-"Selon vous, le numérique nuit-il à la concentration ?",
-GET_TEXT,
-"à votre avis, l'utilisation du numérique peut-il au contraire __améliorer certaines capacités physiques__ ?",
-GET_TEXT,
-"modal numAmeliorerCapacitesPhysiques",
-"Le numérique a-t-il déjà eu un effet néfaste sur votre santé ou celle de vos proche ? Quel type (physique, psychologique) ?",
-GET_TEXT,
-`Connaissez-vous des cas d'addiction au numérique (ou vous-même ?) ?
-Quel est votre avis dessus ?
-Quel était l'age de la personne concernée, et pouvez-vous supposer une raison qui l'a menée à cette addiction ?`,
-GET_TEXT,
-`Pensez-vous que, si jamais le numérique deviendrait un outil quotidien à part entière dans nos classes, des lois sur la sécurité et le droit à la "déconnexion" serait nécessaire ?`,
-GET_TEXT,
-`De nos jours, nous voyons les très jeunes enfants (des bébés aux élèves de sixième) massivement exposés aux outils numériques.
-Nos recherches supposent un effet néfaste sur eux, non seulement sur la santé, mais aussi un manque de la maitrise de ces objets.`,
-"Qu'en pensez-vous ? Cela est-il de la responsabilité des parents, ou du système pédagogique ?",
-GET_TEXT,
-"jump finish"
+  GET_TEXT,
+  "modal observationsActuellesSante",
+  "En parlant des effets secondaires, pensez-vous que les écrans nuisent au lien social ?",
+  GET_TEXT,
+  "modal ecransEtLienSocial",
+  {
+    "choice": "Pensez-vous que les écrans peuvent entrainer la myopie ?",
+    "Oui ": "next",
+    "Je ne sais pas...": "next",
+    "Absurde !": "next",
+    "Je n'ai jamais entendu parler de cette idée là.": "next"
+  }, // waiting choice
+  "modal ecransEtMyopie",
+  "Selon vous, le numérique nuit-il à la concentration ?",
+  GET_TEXT,
+  "à votre avis, l'utilisation du numérique peut-il au contraire __améliorer certaines capacités physiques__ ?",
+  GET_TEXT,
+  "modal numAmeliorerCapacitesPhysiques",
+  "Le numérique a-t-il déjà eu un effet néfaste sur votre santé ou celle de vos proche ? Quel type (physique, psychologique) ?",
+  GET_TEXT,
+  `Connaissez-vous des cas d'addiction au numérique (ou vous-même ?) ?
+  Quel est votre avis dessus ?
+  Quel était l'age de la personne concernée, et pouvez-vous supposer une raison qui l'a menée à cette addiction ?`,
+  GET_TEXT,
+  `Pensez-vous que, si jamais le numérique deviendrait un outil quotidien à part entière dans nos classes, des lois sur la sécurité et le droit à la "déconnexion" serait nécessaire ?`,
+  GET_TEXT,
+  `De nos jours, nous voyons les très jeunes enfants (des bébés aux élèves de sixième) massivement exposés aux outils numériques.
+  Nos recherches supposent un effet néfaste sur eux, non seulement sur la santé, mais aussi un manque de la maitrise de ces objets.`,
+  "Qu'en pensez-vous ? Cela est-il de la responsabilité des parents, ou du système pédagogique ?",
+  GET_TEXT,
+  "jump finish"
 ];
 
 
@@ -167,42 +169,44 @@ script["finish"]  = [
     "Un peu": "next",
     "pas grand chose": "next",
   },
-  "Une fois avoir fini la rédaction de notre dossier, nous souhaiterions que vous le lisiez afin d'exprimer votre avis dessus, et éventuellement recommencer ce questionnaire."
+  "Une fois avoir fini la rédaction de notre dossier, nous souhaiterions que vous le lisiez afin d'exprimer votre avis dessus, et éventuellement recommencer ce questionnaire.",
   "Ce sujet vous intéresse t-il ? Auriez-vous envie de lire notre dossier final, ou de parler de ce sujet avec des proches ?",
   GET_TEXT,
-  Avez-vous trouvé le support du formulaire original (questionnaire via tchatbot automatique) ?
+  "Avez-vous trouvé le support du formulaire original (questionnaire via tchatbot automatique) ?",
   GET_TEXT,
   "C'est la fin du questionnaire. Si jamais vous souhaiterez expliquer votre point de vue, ou avez besoin de conseils, n'hésitez-pas à m'envoyer un mail à ![logane.tann_arobase_u-paris point fr](https://user-images.githubusercontent.com/28659185/98438798-e1f17300-20ec-11eb-80b4-7117be52ec21.png) *(n'oubliez pas le e à la fin de logan)*",
-  "J'ai créé ce questionnaire à la main avec Vue.JS. Si jamais vous souhaitez utiliser ce programme pour créer votre questionnaire, n'hésitez pas à regarder son code source sur [https://github.com/LoganTann/LoganTann.github.io/tree/master/questionnaire-numedu/](mon repository GitHub) ou à m'envoyer un e-mail.",
+  "J'ai programmé ce questionnaire \"à la main\" avec Vue.JS. Si jamais vous souhaitez utiliser ce programme pour créer votre questionnaire, n'hésitez pas à regarder son code source sur [https://github.com/LoganTann/LoganTann.github.io/tree/master/questionnaire-numedu/](mon repository GitHub) ou à m'envoyer un e-mail.",
   "end"
 ];
 
+// MODALS ----------------------------------------------------------------------
+
 modals = {};
 modals["explication_Apriori"] = `
-  Il est fort probable que vous ayez parlé de télétravail, de confinement, et de cours à distance.
+Il est fort probable que vous ayez parlé de télétravail, de confinement, et de cours à distance.
 
-  C'est en fait la **première idée reçue sur ce sujet**, et ce n'est pas vraiment ce que l'on cherche à traiter dans notre exposé.
+C'est en fait la **première idée reçue sur ce sujet**, et ce n'est pas vraiment ce que l'on cherche à traiter dans notre exposé.
 
-  Ce que nous souhaitons démontrer, ce n'est pas que le numérique puisse remplacer l'éducation, mais plutôt rendre les cours **plus efficaces ou plus intéressants en se servant des outils numériques**.
-  Nous pensons que bien entendu, cette pratique doit être encadrée par un enseignant compétant.
+Ce que nous souhaitons démontrer, ce n'est pas que le numérique puisse remplacer l'éducation, mais plutôt rendre les cours **plus efficaces ou plus intéressants en se servant des outils numériques**.
+Nous pensons que bien entendu, cette pratique doit être encadrée par un enseignant compétant.
 
-  En fait, avec les nouvelles réformes, nous pouvons déjà voir des tentatives d'applications numériques en classe au collège et au lycée :
-  * Utilisation d'un espace numérique de travail et apprentissage des bases de l'informatique
-  * Visualisation de courbes d'équations en maths
+En fait, avec les nouvelles réformes, nous pouvons déjà voir des tentatives d'applications numériques en classe au collège et au lycée :
+* Utilisation d'un espace numérique de travail et apprentissage des bases de l'informatique
+* Visualisation de courbes d'équations en maths
 
-  Certains profs peuvent innover. Vous avez sûrement dû voir ces idées-là :
-  * Quizz typique d'une émission télévisée projeté, où les élèves en groupe répondent depuis leurs téléphone afin de les faire réviser
-  * Stimulations d'expériences ou PowerPoint très interactifs pour les cours
-  * QCM en temps réel avec des QR-Codes
-  * Travail de groupe avec des outils de collaboration en temps réel (google docs, etherpad, codeshare...)
-  * Utilisation des séries pour faire réviser les langues
-  * Interrogations avec des questions dans un contenu ou disposées dans un ordre aléatoire, et corrigées de manière semi-automatique.
+Certains profs peuvent innover. Vous avez sûrement dû voir ces idées-là :
+* Quizz typique d'une émission télévisée projeté, où les élèves en groupe répondent depuis leurs téléphone afin de les faire réviser
+* Stimulations d'expériences ou PowerPoint très interactifs pour les cours
+* QCM en temps réel avec des QR-Codes
+* Travail de groupe avec des outils de collaboration en temps réel (google docs, etherpad, codeshare...)
+* Utilisation des séries pour faire réviser les langues
+* Interrogations avec des questions dans un contenu ou disposées dans un ordre aléatoire, et corrigées de manière semi-automatique.
 
 
-  Le confinement, même si on en a surtout tiré du mal, a permis l'émergence de nouvelles méthodes :
-  * Les cours à la télé via la maison lumni. D'ailleurs, diffuser des extraits de reportages ou de séries permettent bien souvent de dynamiser un cours pour faire des débats en philosophie.
-  * Utilisation de logiciels de messagerie et de visio conférences pour faire des débats mieux argumentés, ou pour faire passer des extraits ou des références numériques.
-  * Toujours dans la messagerie, mais plus dans l'aspect du support : parler par le texte permets une certaine liberté sur les mots, et donc aussi de se sentir plus proche avec ses élèves, sans compter une plus grande flexibilité dans les horaires ou dans l'organisation. Cela permet aussi de motiver certains élèves qui sont plus discrets à l'oral, ou bien le fait de pouvoir envoyer ses réponses par le tchat améliore la participation. On n'a plus vraiment peur de se couper la parole aussi.
+Le confinement, même si on en a surtout tiré du mal, a permis l'émergence de nouvelles méthodes :
+* Les cours à la télé via la maison lumni. D'ailleurs, diffuser des extraits de reportages ou de séries permettent bien souvent de dynamiser un cours pour faire des débats en philosophie.
+* Utilisation de logiciels de messagerie et de visio conférences pour faire des débats mieux argumentés, ou pour faire passer des extraits ou des références numériques.
+* Toujours dans la messagerie, mais plus dans l'aspect du support : parler par le texte permets une certaine liberté sur les mots, et donc aussi de se sentir plus proche avec ses élèves, sans compter une plus grande flexibilité dans les horaires ou dans l'organisation. Cela permet aussi de motiver certains élèves qui sont plus discrets à l'oral, ou bien le fait de pouvoir envoyer ses réponses par le tchat améliore la participation. On n'a plus vraiment peur de se couper la parole aussi.
 
 `;
 
@@ -217,7 +221,7 @@ modals["fonctionnementInternet"] = `
   La consommation pour les faire fonctionner y est astronomique, et encore, ce n'est qu'une petite part comparée à la climatisation déployée pour refroidir toutes ces machines.
 `;
 
-modals["entreprisesResponsables"] = `De nos jours, les "géants du web" tentent d'avoir une attitude plus responsable envers la nature. Nous pouvons prendre l'exemple de Google qui a fait fonctionner l'ensemble de ses datacentres en énergie renouvelable. Mais rappelons que malgré ces actions, ce n'est qu'une petite part face à la totalité, et que espérer voir un changement positif dépend surtout de votre utilisation.`;
+modals["entreprisesResponsables"] = `De nos jours, les "géants du web" tentent d'avoir une attitude plus responsable envers la nature. Nous pouvons prendre l'exemple de Google qui a fait fonctionner l'ensemble de ses datacentres en énergie renouvelable. Mais rappelons que malgré ces actions, espérer voir un changement positif dépend surtout de votre utilisation des outils numérique.`;
 
 modals["pollutionMails"] = `
   Saviez-vous que les logiciels de mails font plusieurs copies des échanges (parfois sur dix serveurs différents) afin d'assurer la continuité du service si jamais un tombe en panne ou nécessite une maintenance ? Un mail peut vous paraitre léger, mais stocké en grande quantité, pollue beaucoup.
@@ -232,14 +236,14 @@ modals["pollutionMails"] = `
 
 modals["pollutionCloud"] = `
   C'est exactement la même explication que le mail, sauf qu'il est maintenant question de giga octets.
-  **Si vous avez besoin de les partager**, utilisez des services de cloud temporaires tel que https://dl.free.fr qui supprime vos fichiers au bout de 30 jours d'inactivité. Pour la collaboration en temps réel, supprimez les fichiers qui sont désormais inutilisés. Posez-vous la question "Est-ce que j'en ai réellement besoin, et est-ce que c'est la bonne solution ?"
+  **Si vous avez besoin de les partager**, utilisez des services de cloud temporaires tel que <a href="https://dl.free.fr" target="_blank">dl.free.fr</a> qui supprime vos fichiers au bout de 30 jours d'inactivité. Pour la collaboration en temps réel, supprimez les fichiers qui sont désormais inutilisés. Posez-vous la question "Est-ce que j'en ai réellement besoin, et est-ce que c'est la bonne solution ?"
   **Pour archiver vos fichier**, faites plusieurs copies sur vos clés USBs ! Non seulement celle-ci n'a pas besoin d'un climatiseur supplémentaire, mais vos données ne seront pas non plus dans les mains de l'entreprise qui les stockes !
 `;
 
 modals["pollutionFabrication"] = `
   On parle beaucoup de la consommation énergétique, mais il y a aussi des impacts lors de la fabrication et de la fin de vie d'un appareil.
 
-  La fabrication, en particulier l'approvisionnement en métaux rares, contribuent à l'exploitation des humains (cf. le reportage Cash Investigation sur la fabrication des téléphones), tandis que pour la fin de vie, vos chers appareils finissent souvent enfouis sous terre, à l'étranger (On peut parler de pollution décoloniale, qui est un sujet intéressant mais non traité dans notre dossier).
+  La fabrication, en particulier l'approvisionnement en métaux rares, contribuent à l'exploitation des humains (cf. le <a href="https://www.youtube.com/watch?v=w2PZQ-XprQU" target="_blank">reportage Cash Investigation sur la fabrication des téléphones</a>), tandis que pour la fin de vie, vos chers appareils finissent souvent enfouis sous terre, à l'étranger (On peut parler de pollution décoloniale, qui est un sujet intéressant mais non traité dans notre dossier).
   Des alternatives à prix abordables (eh oui ! Même moins cher qu'un Iphone SE !) existent, tel que les achats responsables (marque FairPhone), le reconditionnement ou bien la réparation.
 `;
 
