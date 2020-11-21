@@ -73,6 +73,7 @@ img.profile_pic {
 }
 .msgbody {
   margin-left: 1em;
+  text-align: justify;
 }
 .emoji {
   width: 1em;

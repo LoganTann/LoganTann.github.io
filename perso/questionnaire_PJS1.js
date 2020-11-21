@@ -21,7 +21,7 @@ const app = new Vue({
     sentText: 0,
     isBotTyping: true,
     bot_conversation: [
-      {by: "bot", msg: "Salut 👋!"}
+      {by: "bot", msg: "<h3>Salut 👋!</h3>"}
     ]
   },
   watch: {
@@ -168,6 +168,10 @@ const app = new Vue({
             app.bot_conversation.push({
               by: "player",
               msg: app.sentText
+            });
+            app.bot_conversation.push({
+              by: "player",
+              msg: choiceObj.choice
             });
             app.inputState = "nothing";
             const retval = choiceObj[app.sentText];
