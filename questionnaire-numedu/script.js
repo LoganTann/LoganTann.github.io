@@ -19,7 +19,7 @@ Nous pensons que bien entendu, cette pratique doit être encadrée par un enseig
     "Un élève au Lycée": "next",
     "Un étudiant": "Appliquer notre sujet dans les classes supérieures reste possible, mais un poil plus difficile comparé au collège ou au lycée.",
     "Un prof": "jump profs",
-    "Un parent d'élève ou autre ?": "jump autre",
+    "Un parent d'élève ou autre ?": "jump autre"
   }, // waiting choice
 
   // question pour les élèves
@@ -29,105 +29,236 @@ Nous pensons que bien entendu, cette pratique doit être encadrée par un enseig
   GET_TEXT,
   "Pensez-vous que le système éducatif français manque de pédagogie face aux autres pays tel que le Canada? Y a-t-il tout de même certains points positifs ?",
   GET_TEXT,
-  "Combien d'heures de sommeil avez-vous du lundi au vendredi ?",
-  GET_TEXT,
-  "Pensez-vous dormir assez pour suivre convenablement les cours ?",
-  GET_TEXT,
+  {
+    "choice": "Combien d'heures de sommeil avez-vous en période de cours ?",
+    "moins de 6 heures": "next",
+    "6 à 7 heures": "next",
+    "7 à 8 heures": "next",
+    "8 à 10 heures": "next",
+    "plus de 10 heures": "next"
+  },
+  {
+    "choice": "Pensez-vous dormir assez pour suivre convenablement les cours ?",
+    "Oui": "next",
+    "Plutôt oui": "next",
+    "ça dépend des jours": "next",
+    "Plutôt non": "next",
+    "Non": "next"
+  },
   "Une petite explication sur le temps de sommeil : ",
   "modal tempsSommeilNecessaire",
-  "Est-ce que vous dormez avec votre téléphone ? Vous arrive-t-il de vous coucher plus tard à cause de celui-ci ?",
-  GET_TEXT,
-  "Selon vous, gérer votre temps de sommeil est-il de votre responsabilité ?",
-  GET_TEXT,
+  {
+    "choice": "Est-ce que vous dormez avec votre téléphone ? Vous arrive-t-il de vous coucher plus tard à cause de celui-ci ?",
+    "Je dors avec mon téléphone, et il m'arrive de dépasser minuit": "next",
+    "Je dors avec mon téléphone, mais je ne dépasse généralement pas minuit": "next",
+    "Je dors avec mon téléphone, mais je ne le touche pas": "next",
+    "Je ne dors pas avec mon téléphone": "next",
+  },
+  {
+    "choice": "Selon vous, gérer votre temps de sommeil est-il de votre responsabilité ?",
+    "Non, car il y a des facteurs de perturbations qui ne dépendent pas de moi (insomnies, famille couche-tard)": "next",
+    "Plutôt non": "next",
+    "Plutôt Oui": "next",
+    "Oui": "next"
+  },
   "jump polluNum"
 ];
 
 
 script["profs"] = [ // guess what ? c'est la partie des profs.
   "### Nos questions pour les profs",
-  "Combien d'années d'expérience avez-vous ?",
+  {
+    "choice": "Combien d'années d'expérience avez-vous ?",
+    "Moins de 3 ans": "next",
+    "Entre 3 et 6 ans": "next",
+    "entre 6 et 10 ans": "next",
+    "entre 10 et 18 ans": "next",
+    "plus de 18 ans": "next"
+  },
+  "Dans quel unité d'enseignement et à quel niveau enseignez-vous ?",
   GET_TEXT,
-  "Dans quel domaine et à quel niveau enseignez-vous ?",
-  GET_TEXT,
-  "Avez-vous un matériel informatique fonctionnel suffisant ? (ordinateur un minimum performant par exemple, smartphone personnel également utilisable de manière fluide)",
-  GET_TEXT,
-  "Quel est votre niveau en informatique (logiciels de bureautique, PowerPoint, connaissances additionnelles) ?",
-  GET_TEXT,
-  ` Le programme pédagogique vous force-t-il à l'utilisation d'ordinateurs dans vos cours (synthèses de recherches, EXAO, tableurs et suites bureautiques) ?
-    Selon vous, permettent-ils de rendre votre cours plus attractif ou compréhensif, ou bien cela aurait l'effet inverse ?`,
-  GET_TEXT,
-  `Ressentez vous le besoin de formations dans certains logiciels, faire des choses que vos collègues savent faire mais pas vous ?
-  Seriez-vous aussi intéressé de formations afin de rendre vos cours plus attractifs à partir du numérique ?
+  {
+    "choice": "Avez-vous un matériel informatique fonctionnel suffisant chez vous?",
+    "Matériel pas assez performant, je me repose sur les ordis de mon établissement": "next",
+    "J'ai un ordinateur mais il n'est pas assez performant pour mes besoins": "next",
+    "Je préfère utiliser une tablette ou un téléphone au profit d'un ordinateur, ça fonctionne mieux": "next",
+    "J'ai un ordinateur qui convient à mes besoins": "next"
+  },
+  {
+    "choice": "Quel est votre niveau en informatique ?",
+    "À part faire de la recherche internet, pas grand chose de plus": "next",
+    "Juste assez pour rédiger mes polycopiés et gérer ce qui est demandé à mes élèves": "next",
+    "Supérieur à la moyenne, assez pour innover face à mes collègues": "next",
+    "Pas autant que Elliot Alderson, mais un niveau considérable quand même...": "next"
+  },
+  {
+    "choice": `Le programme pédagogique tente d'être davatage numérique avec les réformes. Selon vous, permettent-ils de rendre votre cours plus attractif ou compréhensif, ou bien cela aurait l'effet inverse ?`,
+    "J'ai l'impression que ça apporte d'autant plus de difficultés": "next",
+    "ça n'a pas de réel changement": "next",
+    "Les élèves sont plus attentifs avec": "next",
+    "Les deux... certains élèves sont démunis tandis que d'autres sont à l'aise. ça crée une inégalité": "next"
+  },
+  {
+    "choice": `Votre établissement possède-t-il un Espace Numérique de Travail (monlycee.net, ecoledirecte.com...) ?`,
+    "À part enregistrer les notes des élèves, pas grand chose de plus": "next",
+    "ça remplace mon mail académique pour discuter avec mes élèves, mais sans plus": "next",
+    "Juste pour partager des fichiers ou créer des interros, mais sans plus": "next",
+    "Les trois ! C'est un outil complet.": "next"
+  },
+  `Ressentez vous le besoin de formations numérique, faire des choses que vos collègues savent faire mais pas vous ?
   Avez-vous demandé ou bénéficié de l'aide de certains collègues pour manier ou faire de nouvelles choses avec ces outils ?`,
   GET_TEXT,
-  `Votre établissement possède-t-il un Espace Numérique de Travail (monlycee.net, ecoledirecte.com...) ?
-  Celui-ci a-t-il assez d'outils pédagogiques (communication proche avec vos élèves)?
-  Est-ce utilisé pour autre chose que regarder des notes ?`,
-  GET_TEXT,
-  `Avez-vous déjà utilisé un support numérique de votre initiative pour dynamiser votre cours (ceux que nous avons listé au début par exemple), non imposé par le programme scolaire ?
-  Cela a-t-il eu un impact positif, ou négatif ?`,
+  `Avez-vous déjà innové pour rendre vos cours attractif ? Si oui, qu'avez-vous fait ? Cela a-t-il eu un impact positif, ou négatif ?`,
   GET_TEXT,
   `Le fait d'effectuer certaines tâches depuis votre ordinateur vous permet-il d'être plus productif ?
   au contraire, quelles sont les tâches informatiques très popularisées par vos collègues que vous préférez faire à la main.`,
   GET_TEXT,
-  "Que pensez-vous de l'utilisation de jeux vidéos ou l'utilisation de la réalité virtuelle dans certains de vos cours ?",
-  GET_TEXT,
-  "Est-ce que à l'issue du questionnaire, vous auriez envie d'appliquer quelques unes de nos idées dans vos cours ?",
-  GET_TEXT,
+  {
+    "choice": "Que pensez-vous de l'utilisation de jeux vidéos ou l'utilisation de la réalité virtuelle dans certains de vos cours ?",
+    "Il faudrait avoir du budget, mais ça peut être bénéfique pour les révisions": "next",
+    "Pourquoi pas, mais je ne vois pas comment faire quelque chose de concrêt dessus": "next",
+    "Mon avis est partagé": "next",
+    "C'est une perte de temps. Je ne pense pas que ce soit si bénéfique.": "next"
+  },
+  {
+    "choice": "Est-ce que à l'issue du questionnaire, vous auriez envie d'appliquer quelques unes de nos idées dans vos cours ?",
+    "À vrai dire, je n'ai aucun secret sur ce sujet": "next",
+    "ça m'a donné des idées, il faut que je me renseigne": "next",
+    "Je n'ai pas eu l'impression d'apprendre grand chose...": "next"
+  },
   "jump polluNum"
 ];
 
 script["autre"] = [
   "### Nos questions pour les adultes",
-  "Utilisez-vous le numérique de manière régulière (travail, divertissement) ?",
-  GET_TEXT,
+  {
+    "choice": "Votre utilisation principale du numérique ?",
+    "Les suites bureautiques" : "next",
+    "Youtube et compagnie" : "next",
+    "Les réseaux sociaux" : "next",
+    "Me cultiver sur des sites" : "next",
+    "La programmation" : "next",
+    "autre" : "next"
+  },
+  {
+    "choice": "Utilisez-vous le numérique de manière régulière ?",
+    "Ma télé me suffit": "next",
+    "Seulement dans le besoin": "next",
+    "Régulièrement": "next",
+    "Quotidiennement": "next",
+    "Presque toujours !": "next"
+  },
   "Quelle est votre opinion face au numérique en général, ainsi que ces possibles conséquences (si vous savez quelques-unes sur ce sujet, n'hésitez-pas à nous en faire part)",
-  GET_TEXT,
-  "Est-ce que à l'issue du questionnaire, vous auriez envie d'appliquer quelques unes de nos idées dans vos cours ?",
   GET_TEXT,
   "jump polluNum"
 ];
 
 script["polluNum"] = [
   "### La question de la pollution numérique",
-  "Savez-vous comment fonctionne internet, et où sont stockées tous les programmes qui le font tourner, ainsi que vos données ?",
-  GET_TEXT,
+  {
+    "choice": "Savez-vous comment fonctionne **internet**, et où sont stockées tous les programmes qui le font tourner, ainsi que vos données ?",
+    "Aucun secrêt pour moi ! C'est pas comme si c'était mon travail...": "next",
+    "Plutôt bien.": "next",
+    "Juste la base. Des ordis connectés dans des gros entrepots.": "next",
+    "Pas grand chose": "next",
+    "Je ne m'y intéresse pas": "next"
+  },
   "modal fonctionnementInternet",
   "Que connaissez-vous à propos du lien entre la pollution et l'univers numérique ?",
   GET_TEXT,
-  `Connaissez-vous des entreprises "responsables" face à ce problème ? Que pensez-vous de leur politique ?`,
-  GET_TEXT,
+  {
+    "choice": `Connaissez-vous des entreprises "responsables" face à ce problème ? Que pensez-vous de leur politique ?`,
+    "C'est nécessaire, plus d'entreprises devraient le faire": "next",
+    "C'est une bonne chose.": "next",
+    "Autre avis": "next",
+    "C'est juste pour se donner une bonne image, alors qu'elles contribuent à l'exploitation humaine.": "next"
+  },
   "modal entreprisesResponsables",
-  "Utilisez-vous régulièrement vos mails ? ",
-  GET_TEXT,
-  "Supprimez-vous les mails inutiles ?",
-  GET_TEXT,
-  "Y a-t-il tellement de messages dans votre boite e-mail qu'il devient impossible de faire le tri entre ce qui doit ou ne doit pas être supprimé ?",
-  GET_TEXT,
+  {
+    "choice": "Utilisez-vous régulièrement vos mails ? ",
+    "Oui, presque tous les jours": "next",
+    "Assez, juste pour le travail ou avoir les dernières nouvelles": "next",
+    "Peu, juste parce-que c'est nécessaire": "next",
+    "Pas du tout. Je ne connais même plus mon mot de passe...": "next"
+  },
+  {
+    "choice": "Supprimez-vous les mails inutiles ?",
+    "Oui, généralement une fois lus": "next",
+    "Assez, pour laisser de la place": "next",
+    "Peu, juste quand c'est nécessaire": "next",
+    "Pas du tout. C'est trop casse-tête...": "next"
+  },
+  {
+    "choice": "Y a-t-il tellement de messages dans votre boite e-mail qu'il devient impossible de faire le tri entre ce qui doit ou ne doit pas être supprimé ?",
+    "J'ai abandonné, rien que voir le nombre \"750 non-lus\" me décourage": "next",
+    "J'y arrive": "next",
+    "Facile ! Je reçois tellement peu de mails...": "next"
+  },
   "modal pollutionMails",
-  "Utilisez-vous de manière personnelle le cloud (google docs, one drive, Wetransfer...) ? Pour quelles raisons ?",
-  GET_TEXT,
+  {
+    "choice": "Utilisez-vous de manière personnelle le cloud (google docs, one drive, Wetransfer...) ? Pour quelles raisons ?",
+    "Surtout pour partager mes fichiers.": "next",
+    "Autant de stockage gratuit ! Pourquoi se casser la tête avec une clé USB ?": "next",
+    "Les deux : partage et stockage perso.": "next",
+    "Je n'utilise pas beaucoup ce genre de choses.": "next"
+  },
   "modal pollutionCloud",
-  "Possédez-vous un appareil intelligent, tel qu'une enceinte, un électroménager ou une ampoule connectée ?",
-  GET_TEXT,
-  "Que pensez-vous de l'utilité de ces appareils ?",
-  GET_TEXT,
+  {
+    "choice": "Possédez-vous un appareil intelligent, tel qu'un haut-parleur, un électroménager ou une ampoule connectée ?",
+    "Oui, encore aujourd'hui": "next",
+    "J'ai déjà eu ça une fois, mais plus maintenant": "next",
+    "Non": "next"
+  },
+  {
+    "choice": "Que pensez-vous de l'utilité de ces appareils ?",
+    "C'est très pratique !": "next",
+    "Pourquoi pas ?": "next",
+    "Sans opinion": "next",
+    "ça coûte cher inutilement": "next",
+    "Je n'en ai pas besoin": "next"
+  },
   `On estime qu'un téléphone a une durée de vie d'environ 2 ans, et de 5 ans pour un ordinateur de bonne qualité.
   Qu'en est-il pour vos appareils électroniques ?`,
-  GET_TEXT,
-  "Vous arrive t-il d'acheter un nouveau smartphone car celui-ci est trop lent ? Achetez-vous réellement un appareil adapté à vos besoins en termes de performance ?",
-  GET_TEXT,
+  {
+    "choice": `On estime qu'un téléphone a une durée de vie d'environ 2 ans, et de 5 ans pour un ordinateur de bonne qualité.
+    Qu'en est-il pour vos appareils électroniques ?`,
+    "Pire pour moi... Un téléphone par année": "next",
+    "De même pour moi : deux ans en moyenne": "next",
+    "De même pour moi, sauf pour l'ordi": "next",
+    "ça dure plus longtemps pour moi": "next"
+  },
+  {
+    "choice": "Vous arrive t-il d'acheter un nouveau smartphone car celui-ci est trop lent ? Achetez-vous réellement un appareil adapté à vos besoins en termes de performance ?",
+    "ça m'arrive.": "next",
+    "ça m'arrive, mais pour d'autres raisons.": "next",
+    "Pas vraiment. Ce que j'ai me convient.": "next"
+  },
   "modal pollutionFabrication",
-  "Combien de temps passez-vous à regarder des vidéos sur internet par semaines (y compris pour écouter de la musique) ?",
-  GET_TEXT,
+  {
+    "choice": "Combien de temps passez-vous à regarder des vidéos sur internet (y compris pour écouter de la musique) ?",
+    "3 heures par semaine, ou moins": "next",
+    "Entre 3 et 7 heures par semaine": "next",
+    "2 heures par jour": "next",
+    "entre 2 et 4 heures par jour": "next",
+    "entre 4 et 8 heures par jour": "next",
+    "au delà de 8 heures": "next"
+  },
   "modal pollutionYoutube",
+  "jump santeNum"
 ];
 
-script["santeNum"] = [,
+script["santeNum"] = [
+  "### Nos questions sur la santé et le numérique",
   "En ce moment même, des laboratoires du monde entier étudient l'impact des outils numériques sur les comportements du cerveau et de notre corps. Selon Daphné Bavelier, professeur en neuroscience à l'Université de Genève, il faut en moyenne 20 ans pour mener une étude et arriver à une conclusion. En comparaison, l'omniprésence des écrans est apparue il y a près de 8 ans.",,
   "La relation entre la santé et le numérique est encore pleine d'incertitudes. Nous tentons au cours de notre sujet de voir l'état des différentes hypothèses et expérimentations à propos de l'impact des outils numériques sur notre santé, qu'elle soit psychologique, physique ou sociale. Ce que nous cherchons à savoir dans notre axe à propos de la santé, c'est de définir les différentes limites à son application.",
-  "Selon vous, à partir de quelle classe le numérique pourrait être introduit en tant qu'outil pédagogique ?",
-  GET_TEXT,
+  {
+    "choice" : "Selon vous, à partir de quelle classe le numérique pourrait être introduit en tant qu'outil pédagogique ?",
+    "Dès la maternelle": "next",
+    "Pas avant le CP": "next",
+    "Pas avant le CM1": "next",
+    "Pas avant le collège": "next",
+    "Pas avant le lycée ?!": "next"
+  },
   "modal observationsActuellesSante",
   "En parlant des effets secondaires, pensez-vous que les écrans nuisent au lien social ?",
   GET_TEXT,
@@ -136,14 +267,26 @@ script["santeNum"] = [,
     "choice": "Pensez-vous que les écrans peuvent entrainer la myopie ?",
     "Oui ": "next",
     "Je ne sais pas...": "next",
+    "Non, c'est à cause d'autre chose": "next",
     "Absurde !": "next",
     "Je n'ai jamais entendu parler de cette idée là.": "next"
   }, // waiting choice
   "modal ecransEtMyopie",
-  "Selon vous, le numérique nuit-il à la concentration ?",
-  GET_TEXT,
-  "à votre avis, l'utilisation du numérique peut-il au contraire __améliorer certaines capacités physiques__ ?",
-  GET_TEXT,
+  {
+    "choice" : "Selon vous, le numérique nuit-il à la concentration ?",
+    "Oui !": "next",
+    "Plutôt oui": "next",
+    "ça dépend de quelle utilisation": "next",
+    "Je ne sais pas": "next",
+    "Je ne pense pas que ça nuit à la concentration": "next"
+  },
+  {
+    "choice" : "à votre avis, l'utilisation du numérique peut-il au contraire améliorer certaines capacités physiques ?",
+    "Oui, à mon avis": "next",
+    "ça dépend de quelle utilisation": "next",
+    "Je ne sais pas": "next",
+    "Je ne pense pas": "next"
+  },
   "modal numAmeliorerCapacitesPhysiques",
   "Le numérique a-t-il déjà eu un effet néfaste sur votre santé ou celle de vos proche ? Quel type (physique, psychologique) ?",
   GET_TEXT,
@@ -151,8 +294,13 @@ script["santeNum"] = [,
   Quel est votre avis dessus ?
   Quel était l'age de la personne concernée, et pouvez-vous supposer une raison qui l'a menée à cette addiction ?`,
   GET_TEXT,
-  `Pensez-vous que, si jamais le numérique deviendrait un outil quotidien à part entière dans nos classes, des lois sur la sécurité et le droit à la "déconnexion" serait nécessaire ?`,
-  GET_TEXT,
+  {
+    "choice" : `Pensez-vous que, si jamais le numérique deviendrait un outil quotidien à part entière dans nos classes, des lois sur la sécurité et le droit à la "déconnexion" serait nécessaire ?`,
+    "Oui": "next",
+    "Plutôt oui": "next",
+    "Sans Opinion": "next",
+    "Je ne pense pas que c'est nécessaire. C'est un outil comme les autres": "next"
+  },
   `De nos jours, nous voyons les très jeunes enfants (des bébés aux élèves de sixième) massivement exposés aux outils numériques.
   Nos recherches supposent un effet néfaste sur eux, non seulement sur la santé, mais aussi un manque de la maitrise de ces objets.`,
   "Qu'en pensez-vous ? Cela est-il de la responsabilité des parents, ou du système pédagogique ?",
@@ -172,8 +320,15 @@ script["finish"]  = [
   "Une fois avoir fini la rédaction de notre dossier, nous souhaiterions que vous le lisiez afin d'exprimer votre avis dessus, et éventuellement recommencer ce questionnaire.",
   "Ce sujet vous intéresse t-il ? Auriez-vous envie de lire notre dossier final, ou de parler de ce sujet avec des proches ?",
   GET_TEXT,
-  "Avez-vous trouvé le support du formulaire original (questionnaire via tchatbot automatique) ?",
+  "Si vous souhaitez lire notre rapport final, merci d'écrire votre e-mail. Nous vous répondrons d'ici une semaine ou deux.",
   GET_TEXT,
+  {
+    "choice": "Avez-vous trouvé le support du formulaire original (questionnaire via tchatbot automatique) ?",
+    "Oui": "next",
+    "Un peu trop long": "next",
+    "Sans opinion": "next",
+    "Je préfère les formulaires classiques": "next"
+  },
   "C'est la fin du questionnaire. Si jamais vous souhaiterez expliquer votre point de vue, ou avez besoin de conseils, n'hésitez-pas à m'envoyer un mail à ![logane.tann_arobase_u-paris point fr](https://user-images.githubusercontent.com/28659185/98438798-e1f17300-20ec-11eb-80b4-7117be52ec21.png) *(n'oubliez pas le e à la fin de logan)*",
   "J'ai programmé ce questionnaire \"à la main\" avec Vue.JS. Si jamais vous souhaitez utiliser ce programme pour créer votre questionnaire, n'hésitez pas à regarder son code source sur <a href=\"https://github.com/LoganTann/LoganTann.github.io/tree/master/questionnaire-numedu/\" target=\"_blank\">mon repository GitHub</a> ou à m'envoyer un e-mail.",
   "end"
@@ -183,13 +338,6 @@ script["finish"]  = [
 
 modals = {};
 modals["explication_Apriori"] = `
-Il est fort probable que vous ayez parlé de télétravail, de confinement, et de cours à distance.
-
-C'est en fait la **première idée reçue sur ce sujet**, et ce n'est pas vraiment ce que l'on cherche à traiter dans notre exposé.
-
-Ce que nous souhaitons démontrer, ce n'est pas que le numérique puisse remplacer l'éducation, mais plutôt rendre les cours **plus efficaces ou plus intéressants en se servant des outils numériques**.
-Nous pensons que bien entendu, cette pratique doit être encadrée par un enseignant compétant.
-
 En fait, avec les nouvelles réformes, nous pouvons déjà voir des tentatives d'applications numériques en classe au collège et au lycée :
 * Utilisation d'un espace numérique de travail et apprentissage des bases de l'informatique
 * Visualisation de courbes d'équations en maths
@@ -249,7 +397,7 @@ modals["pollutionFabrication"] = `
 
 
 modals["pollutionYoutube"] = `
-  Le visionnage de vidéo par internet, que l'on appelle plus communément "streaming", est un des facteurs les plus polluants sur internet. Jusque là, la technique pour créer une vidéo n'a pas réellement changée : il suffit seulement de faire défiler à une vitesse raisonnable (30 images par seconde en moyenne sur internet) des images. Ainsi, la vidéo est parmi le type de fichier le plus utilisé qui prends le plus de place numériquement.
+  Le visionnage de vidéo par internet, que l'on appelle plus communément "streaming", est un des facteurs les plus polluants sur internet. Jusque là, la technique pour créer une vidéo n'a pas réellement changée : il suffit seulement de faire défiler à une vitesse raisonnable des images (30 images par seconde en moyenne sur internet). Ainsi, la vidéo est parmi le type de fichier le plus utilisé qui prends le plus de place numériquement.
 
   Pour limiter l'impact de la pollution, vous ne pouvez pas grand-chose dans la manière dont c'est stocké, par contre, pour limiter le trafic (qui est tout aussi polluant, rappelons-le), avez-vous réellement besoin de visionner votre vidéo en FULL-HD. Surtout si vous êtes sur téléphone, réduisez la qualité de vidéo à 480p.
   Si vous écoutez seulement de la musique sans vous focaliser sur la vidéo en elle-même, via youtube pour profiter de son algorithme de suggestions par exemple, réduisez carrément à 144p. En général, limiter la qualité vidéo a peu d'impact sur la qualité sonore.

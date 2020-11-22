@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Questionnaire sur le numérique et l'éducation</title>
 
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enquête : Numérique et Education">
+  <meta property="og:description" content="Sondage : Votre avis sur l'utilisation du numérique en tant qu'outil pédagogique">
+  <meta property="og:url" content="https://logantann.github.io/questionnaire-numedu">
+
+  <meta property="og:image" content="https://logantann.github.io/questionnaire-numedu/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Nous avons besoin de votre opinion">
+
+  <meta property="og:author" content="Logan TANN">
+  <meta property="og:locale" content="fr_FR">
+
   <script src="https://vuejs.org/js/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -14,14 +27,14 @@
 </head>
 <body class="">
   <div id="app" class="row">
-    <div id="navbar" class="col-sm-12 col-md-3 d-flex flex-column justify-content-around"  v-bind:class="{ inactive: modalContent != 0 }" >
+    <div id="navbar" class="col-sm-12 col-md-3 d-flex flex-column justify-content-around text-center"  v-bind:class="{ inactive: modalContent != 0 }" >
       <div class="">
         <img src="logo_numedu_txt.png" alt="Numérique & Education"/>
         <div class="d-none d-md-block">
-          <h1>Questionnaire</h1>
+          <h1>Sondage : Votre avis sur le numérique au service de l'éducation</h1>
         </div>
       </div>
-      <div class="" style="font-size: 0.8em">
+      <div class="text-justify" style="font-size: 0.8em">
         <p>La conversation est sauvegardée dans le LocalStorage de votre navigateur à des fins de récupération. Ces données seront envoyées dans notre serveur après votre validation.</p>
         <a href="#!" @click="confirmAbortAndSave" v-if="inputState != 'ended' && introduction_step > 2">Cliquez ici si vous souhaitez abandonner et envoyer vos données</a>
       </div>
