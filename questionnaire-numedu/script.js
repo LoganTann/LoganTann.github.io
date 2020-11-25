@@ -3,20 +3,20 @@ const script = {};
 const GET_TEXT = "get text"; // just to add the color
 
 script["start"] = [
-  "Tout d'abord, rien qu'en lisant la présentation de notre sujet, que savez-vous dessus.<br> Quels sont vos \"à-priori\" sur ce sujet ?",
+  "Tout d'abord, rien qu'en lisant la présentation de notre sujet, que savez-vous sur ce sujet.<br> Quels sont vos \"à-priori\" ?",
   GET_TEXT, // wainting text
   "Il est fort probable que vous ayez parlé de télétravail, de confinement, et de cours à distance.",
   `C'est en fait la première idée reçue sur ce sujet, et ce n'est pas vraiment ce que l'on cherche à traiter dans notre exposé.
 
-Ce que nous souhaitons démontrer, ce n'est pas que le numérique puisse remplacer l'éducation, mais plutôt rendre les cours plus efficaces ou plus intéressants en se servant des outils numériques.
-Nous pensons que bien entendu, cette pratique doit être encadrée par un enseignant compétant.`,
+Ce que nous souhaitons démontrer, ce n'est pas tant que le numérique puisse remplacer l’éducation, mais plutôt qu'il puisse rendre les cours plus efficaces ou plus intéressants.
+Nous pensons que bien entendu, cette pratique doit être encadrée par un enseignant compétent.`,
   "Pour voir les perspectives possible, regardez cet encadré d'explications : ",
   "modal explication_Apriori",
   {
     "choice": "êtes-vous : ",
-    "Un élève désolarisé, ou qui fait cours à distance cette année (hors contexte de confinement) ?": "next",
-    "Un élève au Collège": "next",
-    "Un élève au Lycée": "next",
+    "Un élève déscolarisé, ou qui fait cours à distance cette année (hors contexte de confinement) ?": "next",
+    "Un élève au collège": "next",
+    "Un élève au lycée": "next",
     "Un étudiant": "Appliquer notre sujet dans les classes supérieures reste possible, mais un poil plus difficile comparé au collège ou au lycée.",
     "Un prof": "jump profs",
     "Un parent d'élève ou autre ?": "jump autre"
@@ -75,7 +75,7 @@ script["profs"] = [ // guess what ? c'est la partie des profs.
     "entre 10 et 18 ans": "next",
     "plus de 18 ans": "next"
   },
-  "Dans quel unité d'enseignement et à quel niveau enseignez-vous ?",
+  "Dans quelle unité d'enseignement et à quel niveau enseignez-vous ?",
   GET_TEXT,
   {
     "choice": "Avez-vous un matériel informatique fonctionnel suffisant chez vous?",
@@ -86,17 +86,17 @@ script["profs"] = [ // guess what ? c'est la partie des profs.
   },
   {
     "choice": "Quel est votre niveau en informatique ?",
-    "À part faire de la recherche internet, pas grand chose de plus": "next",
+    "À part faire de la recherche sur internet, pas grand-chose de plus": "next",
     "Juste assez pour rédiger mes polycopiés et gérer ce qui est demandé à mes élèves": "next",
     "Supérieur à la moyenne, assez pour innover face à mes collègues": "next",
     "Pas autant que Elliot Alderson, mais un niveau considérable quand même...": "next"
   },
   {
-    "choice": `Le programme pédagogique tente d'être davatage numérique avec les réformes. Selon vous, permettent-ils de rendre votre cours plus attractif ou compréhensif, ou bien cela aurait l'effet inverse ?`,
+    "choice": `Le programme pédagogique tente d'être davantage numérique avec les réformes. Selon vous, permettent-ils de rendre votre cours plus attractif ou compréhensif, ou bien cela aurait l'effet inverse ?`,
     "J'ai l'impression que ça apporte d'autant plus de difficultés": "next",
     "ça n'a pas de réel changement": "next",
     "Les élèves sont plus attentifs avec": "next",
-    "Les deux... certains élèves sont démunis tandis que d'autres sont à l'aise. ça crée une inégalité": "next"
+    "Les deux... certains élèves sont démunis tandis que d'autres sont à l'aise. Ça crée une inégalité": "next"
   },
   {
     "choice": `Votre établissement possède-t-il un Espace Numérique de Travail (monlycee.net, ecoledirecte.com...) ?`,
@@ -105,10 +105,10 @@ script["profs"] = [ // guess what ? c'est la partie des profs.
     "Juste pour partager des fichiers ou créer des interros, mais sans plus": "next",
     "Les trois ! C'est un outil complet.": "next"
   },
-  `Ressentez vous le besoin de formations numérique, faire des choses que vos collègues savent faire mais pas vous ?
+  `Ressentez vous le besoin de formations numérique, pour faire des choses que vos collègues savent faire mais pas vous ?
   Avez-vous demandé ou bénéficié de l'aide de certains collègues pour manier ou faire de nouvelles choses avec ces outils ?`,
   GET_TEXT,
-  `Avez-vous déjà innové pour rendre vos cours attractif ? Si oui, qu'avez-vous fait ? Cela a-t-il eu un impact positif, ou négatif ?`,
+  `Avez-vous déjà innové pour rendre vos cours attractifs ? Si oui, qu'avez-vous fait ? Cela a-t-il eu un impact positif, ou négatif ?`,
   GET_TEXT,
   `Le fait d'effectuer certaines tâches depuis votre ordinateur vous permet-il d'être plus productif ?
   au contraire, quelles sont les tâches informatiques très popularisées par vos collègues que vous préférez faire à la main.`,
@@ -116,12 +116,12 @@ script["profs"] = [ // guess what ? c'est la partie des profs.
   {
     "choice": "Que pensez-vous de l'utilisation de jeux vidéos ou l'utilisation de la réalité virtuelle dans certains de vos cours ?",
     "Il faudrait avoir du budget, mais ça peut être bénéfique pour les révisions": "next",
-    "Pourquoi pas, mais je ne vois pas comment faire quelque chose de concrêt dessus": "next",
+    "Pourquoi pas, mais je ne vois pas comment faire quelque chose de concret dessus": "next",
     "Mon avis est partagé": "next",
     "C'est une perte de temps. Je ne pense pas que ce soit si bénéfique.": "next"
   },
   {
-    "choice": "Est-ce que à l'issue du questionnaire, vous auriez envie d'appliquer quelques unes de nos idées dans vos cours ?",
+    "choice": "Est-ce que à l'issue du questionnaire, vous auriez envie d'appliquer quelques-unes de nos idées dans vos cours ?",
     "À vrai dire, je n'ai aucun secret sur ce sujet": "next",
     "ça m'a donné des idées, il faut que je me renseigne": "next",
     "Je n'ai pas eu l'impression d'apprendre grand chose...": "next"
@@ -148,7 +148,7 @@ script["autre"] = [
     "Quotidiennement": "next",
     "Presque toujours !": "next"
   },
-  "Quelle est votre opinion face au numérique en général, ainsi que ces possibles conséquences (si vous savez quelques-unes sur ce sujet, n'hésitez-pas à nous en faire part)",
+  "Quelle est votre opinion sur le numérique en général, ainsi que sur ses possibles conséquences ?",
   GET_TEXT,
   "jump polluNum"
 ];
@@ -156,11 +156,11 @@ script["autre"] = [
 script["polluNum"] = [
   "### La question de la pollution numérique",
   {
-    "choice": "Savez-vous comment fonctionne **internet**, et où sont stockées tous les programmes qui le font tourner, ainsi que vos données ?",
-    "Aucun secrêt pour moi ! C'est pas comme si c'était mon travail...": "next",
+    "choice": "Savez-vous comment fonctionne **internet**, et où sont stockés tous les programmes qui le font tourner, ainsi que vos données ?",
+    "Aucun secret pour moi ! C'est pas comme si c'était mon travail...": "next",
     "Plutôt bien.": "next",
-    "Juste la base. Des ordis connectés dans des gros entrepots.": "next",
-    "Pas grand chose": "next",
+    "Juste la base. Des ordis connectés dans des gros entrepôts.": "next",
+    "Pas grand-chose": "next",
     "Je ne m'y intéresse pas": "next"
   },
   "modal fonctionnementInternet",
@@ -228,7 +228,7 @@ script["polluNum"] = [
     "ça dure plus longtemps pour moi": "next"
   },
   {
-    "choice": "Vous arrive t-il d'acheter un nouveau smartphone car celui-ci est trop lent ? Achetez-vous réellement un appareil adapté à vos besoins en termes de performance ?",
+    "choice": "Vous arrive-t-il d'acheter un nouveau smartphone car celui-ci est trop lent ? Achetez-vous réellement un appareil adapté à vos besoins en termes de performance ?",
     "ça m'arrive.": "next",
     "ça m'arrive, mais pour d'autres raisons.": "next",
     "Pas vraiment. Ce que j'ai me convient.": "next"
@@ -249,8 +249,8 @@ script["polluNum"] = [
 
 script["santeNum"] = [
   "### Nos questions sur la santé et le numérique",
-  "En ce moment même, des laboratoires du monde entier étudient l'impact des outils numériques sur les comportements du cerveau et de notre corps. Selon Daphné Bavelier, professeur en neuroscience à l'Université de Genève, il faut en moyenne 20 ans pour mener une étude et arriver à une conclusion. En comparaison, l'omniprésence des écrans est apparue il y a près de 8 ans.",,
-  "La relation entre la santé et le numérique est encore pleine d'incertitudes. Nous tentons au cours de notre sujet de voir l'état des différentes hypothèses et expérimentations à propos de l'impact des outils numériques sur notre santé, qu'elle soit psychologique, physique ou sociale. Ce que nous cherchons à savoir dans notre axe à propos de la santé, c'est de définir les différentes limites à son application.",
+  "En ce moment même, des laboratoires du monde entier étudient l'impact des outils numériques sur les comportements du cerveau et de notre corps. Selon Daphné Bavelier, professeur en neuroscience à l'Université de Genève, il faut en moyenne 20 ans pour mener une étude et arriver à une conclusion. Or l'omniprésence des écrans est apparue il y a près de 8 ans.",
+  "La relation entre la santé et le numérique est encore pleine d'incertitudes. Nous tentons au cours de notre sujet de voir l'état des différentes hypothèses et expérimentations à propos de l'impact des outils numériques sur notre santé, qu'il soit psychologique, physique ou sociale.",
   {
     "choice" : "Selon vous, à partir de quelle classe le numérique pourrait être introduit en tant qu'outil pédagogique ?",
     "Dès la maternelle": "next",
@@ -269,7 +269,7 @@ script["santeNum"] = [
     "Je ne sais pas...": "next",
     "Non, c'est à cause d'autre chose": "next",
     "Absurde !": "next",
-    "Je n'ai jamais entendu parler de cette idée là.": "next"
+    "Je n'ai jamais entendu parler de cette idée-là.": "next"
   }, // waiting choice
   "modal ecransEtMyopie",
   {
@@ -288,11 +288,11 @@ script["santeNum"] = [
     "Je ne pense pas": "next"
   },
   "modal numAmeliorerCapacitesPhysiques",
-  "Le numérique a-t-il déjà eu un effet néfaste sur votre santé ou celle de vos proche ? Quel type (physique, psychologique) ?",
+  "Le numérique a-t-il déjà eu un effet néfaste sur votre santé ou celle de vos proche ? De quel type (physique, psychologique) ?",
   GET_TEXT,
   `Connaissez-vous des cas d'addiction au numérique (ou vous-même ?) ?
   Quel est votre avis dessus ?
-  Quel était l'age de la personne concernée, et pouvez-vous supposer une raison qui l'a menée à cette addiction ?`,
+  Quel était l'âge de la personne concernée, et pouvez-vous supposer une raison qui l'a menée à cette addiction ?`,
   GET_TEXT,
   {
     "choice" : `Pensez-vous que, si jamais le numérique deviendrait un outil quotidien à part entière dans nos classes, des lois sur la sécurité et le droit à la "déconnexion" serait nécessaire ?`,
@@ -315,10 +315,10 @@ script["finish"]  = [
     "Oui": "next",
     "Non": "next",
     "Un peu": "next",
-    "pas grand chose": "next",
+    "Pas grand-chose": "next",
   },
   "Une fois avoir fini la rédaction de notre dossier, nous souhaiterions que vous le lisiez afin d'exprimer votre avis dessus, et éventuellement recommencer ce questionnaire.",
-  "Ce sujet vous intéresse t-il ? Auriez-vous envie de lire notre dossier final, ou de parler de ce sujet avec des proches ?",
+  "Ce sujet vous intéresse-t-il ? Auriez-vous envie de lire notre dossier final, ou de parler de ce sujet avec des proches ?",
   GET_TEXT,
   "Si vous souhaitez lire notre rapport final, merci d'écrire votre e-mail. Nous vous répondrons d'ici une semaine ou deux.",
   GET_TEXT,
@@ -376,7 +376,7 @@ modals["pollutionMails"] = `
 
   Voici le petit conseil que je vous propose : en ouvrant le mail, vous avez trois possibilités :
   * Le mettre à la corbeille. Tout comme un courrier marqué comme "spam", ils restent encore 30 jours dans le dossier de suppression, avant d'être réellement détruit.
-  * Si le mail est vraiment important : Si vous en aurez besoin dans le mois, laissez le dans votre boite de réception, sinon, déplacez le systématiquement dans le dossier archives.
+  * Si le mail est vraiment important : Si vous en aurez besoin dans le mois, laissez-le dans votre boite de réception, sinon, déplacez le systématiquement dans le dossier archives.
   * En cas d'urgence face à un mail supprimé, vous pouvez demander à vos collègues qui auraient sûrement une copie de ce même mail.
 
   Pensez à vous désinscrire des newsletters inutiles, et essayez de garder l'objectif d'une unique page de mail par boites que vous possédez ! Oui, c'est possible : je continue de le faire depuis plus de deux ans, et je n'ai jamais eu un quelconque problème !
@@ -385,7 +385,7 @@ modals["pollutionMails"] = `
 modals["pollutionCloud"] = `
   C'est exactement la même explication que le mail, sauf qu'il est maintenant question de giga octets.
   **Si vous avez besoin de les partager**, utilisez des services de cloud temporaires tel que <a href="https://dl.free.fr" target="_blank">dl.free.fr</a> qui supprime vos fichiers au bout de 30 jours d'inactivité. Pour la collaboration en temps réel, supprimez les fichiers qui sont désormais inutilisés. Posez-vous la question "Est-ce que j'en ai réellement besoin, et est-ce que c'est la bonne solution ?"
-  **Pour archiver vos fichier**, faites plusieurs copies sur vos clés USBs ! Non seulement celle-ci n'a pas besoin d'un climatiseur supplémentaire, mais vos données ne seront pas non plus dans les mains de l'entreprise qui les stockes !
+  **Pour archiver vos fichiers**, faites plusieurs copies sur vos clés USBs ! Non seulement celle-ci n'a pas besoin d'un climatiseur supplémentaire, mais vos données ne seront pas non plus dans les mains de l'entreprise qui les stockes !
 `;
 
 modals["pollutionFabrication"] = `
@@ -397,7 +397,7 @@ modals["pollutionFabrication"] = `
 
 
 modals["pollutionYoutube"] = `
-  Le visionnage de vidéo par internet, que l'on appelle plus communément "streaming", est un des facteurs les plus polluants sur internet. Jusque là, la technique pour créer une vidéo n'a pas réellement changée : il suffit seulement de faire défiler à une vitesse raisonnable des images (30 images par seconde en moyenne sur internet). Ainsi, la vidéo est parmi le type de fichier le plus utilisé qui prends le plus de place numériquement.
+  Le visionnage de vidéo par internet, que l'on appelle plus communément "streaming", est un des facteurs les plus polluants sur internet. Jusque-là, la technique pour créer une vidéo n'a pas réellement changée : il suffit seulement de faire défiler à une vitesse raisonnable des images (30 images par seconde en moyenne sur internet). Ainsi, la vidéo est parmi le type de fichier le plus utilisé qui prends le plus de place numériquement.
 
   Pour limiter l'impact de la pollution, vous ne pouvez pas grand-chose dans la manière dont c'est stocké, par contre, pour limiter le trafic (qui est tout aussi polluant, rappelons-le), avez-vous réellement besoin de visionner votre vidéo en FULL-HD. Surtout si vous êtes sur téléphone, réduisez la qualité de vidéo à 480p.
   Si vous écoutez seulement de la musique sans vous focaliser sur la vidéo en elle-même, via youtube pour profiter de son algorithme de suggestions par exemple, réduisez carrément à 144p. En général, limiter la qualité vidéo a peu d'impact sur la qualité sonore.
@@ -416,7 +416,7 @@ modals["ecransEtLienSocial"] = `
 
   Si nous devions donner notre avis, nous recommanderions les cours en classe plutôt que les cours à domicile, d'un point de vue principalement social, puisque les cours à domiciles pourraient faire souffrir la plupart des élèves d'un isolement potentiel. Les cours à distance imposés par le confinement démontrent bien les limites des outils technologiques pour remédier à cet aspect social.
 
-  Cela rejoins notre première idée reçue : nous ne voulons pas remplacer l'éducation par des écrans, mais plutôt utiliser le numérique comme un outil dans nos salles de classe. D'ailleurs, le numérique permets de faire connaissance de certaines personnes sans se soucier de la distance. On pourrait potentiellement supposer qu'en cours de langue, les élèves puissent avoir des correspondants et communiquer avec eux par messages textuels !
+  Cela rejoint notre première idée reçue : nous ne voulons pas remplacer l'éducation par des écrans, mais plutôt utiliser le numérique comme un outil dans nos salles de classe. D'ailleurs, le numérique permets de faire connaissance de certaines personnes sans se soucier de la distance. On pourrait potentiellement supposer qu'en cours de langue, les élèves puissent avoir des correspondants et communiquer avec eux par messages textuels !
 
   Même si objectivement, nous préférons l'enseignement en classe, il ne faut pas voir l'enseignement à domicile comme un fléau. Bien que récemment, Emmanuel Macron ait proposé vouloir abolir cette forme d'éducation en raison du séparatisme islamique, il faut savoir que beaucoup de personnes, souffrant par exemple de maladies ou de traumatismes, sont dans la nécessité de suivre ce genre d'enseignement.
 
@@ -432,9 +432,9 @@ modals["ecransEtMyopie"] = `
 
   Cela est un point intéressant pour notre sujet. D'une part, que l'on utilise les tablettes ou pas dans la classe, il est recommandé de faire certains cours dehors, ou bien d'avoir une exposition lumineuse quotidienne suffisante. On pourrait imaginer la possibilité d'emmener les élèves dehors pour observer le terrain, accompagné de tablettes afin de prendre des notes, compléter sa copie, et avoir des documents avec lui.
 
-  D'autre part, que si les cours en distanciel (comme nous sommes en train de bien le subir cette année...) sont imposés, ne pas surcharger les élèves de travail afin qu'ils puissent se permettre de sortir assez longtemps chaque jour. L'étude à propos du lien entre la myopie et l'exposition lumineuse observe une recrudescence de la maladie dans les pays est-asiatiques, alors que leur système scolaire font parti d'un des plus élitistes et chargés au monde. Toujours dans la notion de confinement, un coach dédiée afin d'accompagner les élèves à distance est une bonne idée d'application à mettre en place. Peut-être travaillerons-nous sur une application de ce genre pour nos projets applicatifs dans un an ?
+  D'autre part, que si les cours en distanciel (comme nous sommes en train de bien le subir cette année...) sont imposés, ne pas surcharger les élèves de travail afin qu'ils puissent se permettre de sortir assez longtemps chaque jour. L'étude à propos du lien entre la myopie et l'exposition lumineuse observe une recrudescence de la maladie dans les pays est-asiatiques, alors que leur système scolaire fait partie d'un des plus élitistes et chargés au monde. Toujours dans la notion de confinement, un coach dédiée afin d'accompagner les élèves à distance est une bonne idée d'application à mettre en place. Peut-être travaillerons-nous sur une application de ce genre pour nos projets applicatifs dans un an ?
 
-  Attention, cela n'est pas à généraliser ! Il ne faut pas penser que les écrans n'ont pas d'effets néfastes : d'une part, les études sont encore en train de faire des recherches, et d'autre part, il a été démontré que la lumière bleue des écrans facilitent les insomnies. Il est uniquement question des liens entre la myopie et les écrans.
+  Attention, cela n'est pas à généraliser ! Il ne faut pas penser que les écrans n'ont pas d'effets néfastes : d'une part, les études sont encore en train de faire des recherches, et d'autre part, il a été démontré que la lumière bleue des écrans facilite les insomnies. Il est uniquement question des liens entre la myopie et les écrans.
 
 `;
 
