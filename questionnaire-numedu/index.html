@@ -50,12 +50,10 @@
         <!-- INTRODUCTION --------------------->
         <div id="introBox" v-if="introduction_step < 3" class="container d-flex flex-column justify-content-between">
           <div v-if="introduction_step == 0">
+            <h1>Questionnaire clos</h1>
             <p>
-              Bonjour, je suis Logan, un étudiant en informatique à l'IUT de l'Université de Paris.<br>
-              Dans le cadre de nos études, nous devons mener un PJS1. Le PJS1, c'est tout simplement un grand exposé en groupe dont le rapport devra être écrit sur du support numérique tel qu'un site web.
-            </p>
-            <p>
-              Finalement, c'est assez proche des TPEs que l'on peut avoir en classe première générale.
+              Attention : <b>ce questionnaire est fermé depuis la fin du S1</b>. Merci de ne pas y répondre ! <br>
+              Le fichier n'est pas supprimé si jamais vous cherchez à tester ce programme (et vous donner le l'inspi); mais ce que vous vous apprêtez à envoyer ne sera pas lu !!
             </p>
           </div>
           <div v-else-if="introduction_step == 1">
