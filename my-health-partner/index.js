@@ -28,7 +28,12 @@ const dateFormatter = new Intl.DateTimeFormat('fr-BE', {
 });
 const defaultImage = 'https://placehold.co/600x400';
 
-document.addEventListener('DOMContentLoaded', main);
+if (document.readyState === "loading") {
+    document.addEventListener('DOMContentLoaded', main);
+} else {
+    main();
+}
+
 /**
  * @author LoganTann
  */
