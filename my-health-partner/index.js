@@ -22,8 +22,8 @@
  */
 
 const dateFormatter = new Intl.DateTimeFormat('fr-BE', {
-    year: '2-digit',
-    month: '2-digit',
+    year: 'numeric',
+    month: 'short',
     day: '2-digit',
 });
 const defaultImage = 'https://placehold.co/600x400';
@@ -49,7 +49,7 @@ async function fetchArticles() {
     /** @type {LibraryBody} */
     const response = await request.json();
     return response.Items
-            .sort((a, b) => a.PublishedDtm.localeCompare(b.PublishedDtm));
+            .sort((a, b) => b.PublishedDtm.localeCompare(a.PublishedDtm));
 }
 
 /**
@@ -83,9 +83,9 @@ function articleToCard(article) {
         </div>
         <div class="homepage-card__body">
             <h5 class="homepage-card__body__title">${sanitizeHTML(article.Title)}</h5>
-            <span class="homepage-card__body__date">${dateFormatter.format(dateCreated)}</span>
             <p class="homepage-card__body__content">${sanitizeHTML(article.Name)}</p>
         </div>
+        <div class="homepage-card__body__date">${dateFormatter.format(dateCreated)}</div>
     `;
     return card;
 }
