@@ -1,3 +1,4 @@
+"use strict";
 // @ts-check
 /**
  * @typedef {{
@@ -37,7 +38,6 @@ async function main() {
     await Promise.allSettled(
         articles.map(article => hydrateCardImage(article))
     );
-    console.log("Please hire me :D");
 }
 document.addEventListener('DOMContentLoaded', main);
 
@@ -56,9 +56,9 @@ async function fetchArticles() {
  * @param {ArticleMetaItem[]} articles list of article to create cards for
  */
 async function addArticleCards(articles) {
-    const container = document.getElementById('homepageCardContainer');
+    const container = document.getElementById('articlesList');
     if (!container) {
-        throw new Error('No homepageCardContainer found');
+        throw new Error('No articlesList found');
     }
     container.innerHTML = '';
     for (const article of articles) {
@@ -74,18 +74,18 @@ async function addArticleCards(articles) {
 function articleToCard(article) {
     const dateCreated = new Date(article.PublishedDtm);
     const card = document.createElement('a');
-    card.className = 'homepage-card';
+    card.className = 'card';
     card.href = `#/article/${article.LinkId}`;
     card.dataset.articleUuid = article.Id;
     card.innerHTML = `
-        <div class="homepage-card__image-container">
-            <img src="https://placehold.co/600x400" alt="Article preview image">
+        <div class="card--image">
+            <img src="./img/skeleton.svg" alt="Article preview image">
         </div>
-        <div class="homepage-card__body">
-            <h5 class="homepage-card__body__title">${sanitizeHTML(article.Title)}</h5>
-            <p class="homepage-card__body__content">${sanitizeHTML(article.Name)}</p>
+        <div class="card--body">
+            <h5 class="card--body__title">${sanitizeHTML(article.Title)}</h5>
+            <p class="card--body__content">${sanitizeHTML(article.Name)}</p>
         </div>
-        <div class="homepage-card__body__date">${dateFormatter.format(dateCreated)}</div>
+        <div class="card--date">${dateFormatter.format(dateCreated)}</div>
     `;
     return card;
 }
@@ -96,7 +96,7 @@ function articleToCard(article) {
 async function hydrateCardImage(article) {
     /** @type {HTMLImageElement | null} */
     const cardImageElement = document.querySelector(
-        `[data-article-uuid="${article.Id}"] .homepage-card__image-container img`
+        `[data-article-uuid="${article.Id}"] .card--image img`
     );
     if (!cardImageElement) {
         return;
