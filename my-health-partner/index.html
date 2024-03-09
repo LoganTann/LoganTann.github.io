@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My library | My Health Parner</title>
-    <script src="./index.js" async></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body data-server-no-reload>
     <nav>
-        My Health Partner
+        <div class="nav__company">My Health Partner</div>
+        <div class="nav__searchbar hide-on-mobile">
+            <input type="text" placeholder="Search an article">
+            <img src="./img/icon-search.svg" alt="Search icon">
+        </div>
+        <div class="nav__user-menu">
+            <img src="./img/user-icon.svg" alt="User Icon">
+            <span>Logan</span>
+        </div>
     </nav>
     <header>
-        <h1>Welcome, Logan</h1>
-        <h2>How are you today ?</h2>
+        <div class="container header__content">
+            <div>
+                <h1>Welcome, Logan.</h1>
+                <h2>How are you today ?</h2>
+            </div>
+        </div>
     </header>
     <main>
-        <section id="homepageCardContainer">
+        <section id="homepageCardContainer" class="container">
             Loading...
         </section>
     </main>

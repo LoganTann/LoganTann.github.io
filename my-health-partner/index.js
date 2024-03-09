@@ -28,12 +28,6 @@ const dateFormatter = new Intl.DateTimeFormat('fr-BE', {
 });
 const defaultImage = 'https://placehold.co/600x400';
 
-if (document.readyState === "loading") {
-    document.addEventListener('DOMContentLoaded', main);
-} else {
-    main();
-}
-
 /**
  * @author LoganTann
  */
@@ -45,6 +39,7 @@ async function main() {
     );
     console.log("Please hire me :D");
 }
+document.addEventListener('DOMContentLoaded', main);
 
 /**
  * @return {Promise<ArticleMetaItem[]>} List of articles, sorted by date
